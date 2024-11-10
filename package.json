@@ -4,6 +4,13 @@
   "main": "index.ts",
   "license": "MIT",
   "packageManager": "yarn@4.5.1",
+  "engines": {
+    "node": ">=18.20.3"
+  },
+  "workspaces": [
+    "packages/**/*",
+    "apps/*"
+  ],
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
