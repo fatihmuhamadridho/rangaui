@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@rangkaui/core';
+import { Box } from 'rangkaui';
 
 const HomePage = () => {
   return (

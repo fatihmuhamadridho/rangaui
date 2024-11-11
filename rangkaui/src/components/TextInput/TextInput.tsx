@@ -4,4 +4,4 @@ const TextInput = () => {
   return <div>TextInput</div>;
 };
 
-export { TextInput };
+export default TextInput;

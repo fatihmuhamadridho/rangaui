@@ -16,6 +16,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "strict": true,
-    "composite": true
+    "composite": true,
+    "sourceMap": true
   }
 }
