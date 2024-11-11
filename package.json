@@ -16,6 +16,10 @@
     "clean": "rimraf --glob packages/*/{esm,cjs,lib,dist} packages/*/*.tsbuildinfo",
     "build": "yarn workspace @rangkaui/next build"
   },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
   "devDependencies": {
     "@eslint/js": "^9.14.0",
     "@types/node": "^22.9.0",

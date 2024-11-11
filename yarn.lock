@@ -1370,9 +1370,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001579":
-  version: 1.0.30001679
-  resolution: "caniuse-lite@npm:1.0.30001679"
-  checksum: 10c0/87fb89c5cb5130e40fa97b110fe175ea1104c359e4882aa5e277f824fbd33aa024f26d41a25f7d214db985f43d5b148c44e363965d17b36660b126a03e75e6e0
+  version: 1.0.30001680
+  resolution: "caniuse-lite@npm:1.0.30001680"
+  checksum: 10c0/11a4e7f6f5d5f965cfd4b7dc4aef34e12a26e99647f02b5ac9fd7f7670845473b95ada416a785473237e4b1b67281f7b043c8736c85b77097f6b697e8950b15f
   languageName: node
   linkType: hard
 
@@ -4628,7 +4628,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picocolors@npm:^1.0.0, picocolors@npm:^1.1.0":
+"picocolors@npm:^1.0.0, picocolors@npm:^1.1.1":
   version: 1.1.1
   resolution: "picocolors@npm:1.1.1"
   checksum: 10c0/e2e3e8170ab9d7c7421969adaa7e1b31434f789afb9b3f115f6b96d91945041ac3ceb02e9ec6fe6510ff036bcc0bf91e69a1772edc0b707e12b19c0f2d6bcf58
@@ -4745,13 +4745,13 @@ __metadata:
   linkType: hard
 
 "postcss@npm:^8, postcss@npm:^8.4.23":
-  version: 8.4.47
-  resolution: "postcss@npm:8.4.47"
+  version: 8.4.48
+  resolution: "postcss@npm:8.4.48"
   dependencies:
     nanoid: "npm:^3.3.7"
-    picocolors: "npm:^1.1.0"
+    picocolors: "npm:^1.1.1"
     source-map-js: "npm:^1.2.1"
-  checksum: 10c0/929f68b5081b7202709456532cee2a145c1843d391508c5a09de2517e8c4791638f71dd63b1898dba6712f8839d7a6da046c72a5e44c162e908f5911f57b5f44
+  checksum: 10c0/d586361fda12fc7ab5650ce9b5763fc61d6ea2cecac9da98fceea6a3f27e42ed34db830582411bc06743492d9bb414c52b0c81da65440682d244d692da2f928a
   languageName: node
   linkType: hard
 
@@ -4843,15 +4843,15 @@ __metadata:
     eslint-config-next: "npm:15.0.3"
     next: "npm:15.0.3"
     postcss: "npm:^8"
-    rangkaui-next: "npm:*"
-    react: "npm:19.0.0-rc-66855b96-20241106"
-    react-dom: "npm:19.0.0-rc-66855b96-20241106"
+    rangkaui-next: "workspace:*"
+    react: "npm:^18.3.0"
+    react-dom: "npm:^18.3.0"
     tailwindcss: "npm:^3.4.1"
     typescript: "npm:^5"
   languageName: unknown
   linkType: soft
 
-"rangkaui-next@npm:*, rangkaui-next@workspace:packages/next":
+"rangkaui-next@workspace:*, rangkaui-next@workspace:packages/next":
   version: 0.0.0-use.local
   resolution: "rangkaui-next@workspace:packages/next"
   dependencies:
@@ -4879,6 +4879,7 @@ __metadata:
     execa: "npm:^9.5.1"
     globals: "npm:^15.12.0"
     prettier: "npm:3.3.3"
+    react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     rimraf: "npm:^6.0.1"
     ts-node: "npm:^10.9.2"
@@ -4887,18 +4888,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"react-dom@npm:19.0.0-rc-66855b96-20241106":
-  version: 19.0.0-rc-66855b96-20241106
-  resolution: "react-dom@npm:19.0.0-rc-66855b96-20241106"
-  dependencies:
-    scheduler: "npm:0.25.0-rc-66855b96-20241106"
-  peerDependencies:
-    react: 19.0.0-rc-66855b96-20241106
-  checksum: 10c0/62298e0bd655f2bcbebccd03f593532a4728bebe119ecb30d7f50503d74882cbda90acacdb96bd54b6c1e29c36e74cc7ccab8132926d80e34002d89c07f6a9ab
-  languageName: node
-  linkType: hard
-
-"react-dom@npm:^18.3.1":
+"react-dom@npm:^18.3.0, react-dom@npm:^18.3.1":
   version: 18.3.1
   resolution: "react-dom@npm:18.3.1"
   dependencies:
@@ -4917,10 +4907,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:19.0.0-rc-66855b96-20241106":
-  version: 19.0.0-rc-66855b96-20241106
-  resolution: "react@npm:19.0.0-rc-66855b96-20241106"
-  checksum: 10c0/d4e33b16257c7fdadc79d73798bdbb4865a460875463a3bf3f06d764ce8795fa7964ee714dcbf3010838842af9ab124495a943305e77b2c8d31db08895d067a3
+"react@npm:^18.3.0, react@npm:^18.3.1":
+  version: 18.3.1
+  resolution: "react@npm:18.3.1"
+  dependencies:
+    loose-envify: "npm:^1.1.0"
+  checksum: 10c0/283e8c5efcf37802c9d1ce767f302dd569dd97a70d9bb8c7be79a789b9902451e0d16334b05d73299b20f048cbc3c7d288bbbde10b701fa194e2089c237dbea3
   languageName: node
   linkType: hard
 
@@ -5222,13 +5214,6 @@ __metadata:
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: 10c0/7e3c8b2e88a1841c9671094bbaeebd94448111dd90a81a1f606f3f67708a6ec57763b3b47f06da09fc6054193e0e6709e77325415dc8422b04497a8070fa02d4
-  languageName: node
-  linkType: hard
-
-"scheduler@npm:0.25.0-rc-66855b96-20241106":
-  version: 0.25.0-rc-66855b96-20241106
-  resolution: "scheduler@npm:0.25.0-rc-66855b96-20241106"
-  checksum: 10c0/65f1187d4b472ad674b91d98661c54dfc312e0ba850713b57411a05db722b5a9cdc7a46683c776116668c251c90cd4d3973b9f021d3821762fa224f94275c85a
   languageName: node
   linkType: hard
 
