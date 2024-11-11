@@ -1,6 +1,6 @@
 {
   "name": "@rangkaui/core",
-  "version": "7.13.5",
+  "version": "0.0.1",
   "main": "./cjs/index.cjs",
   "module": "./esm/index.mjs",
   "types": "./lib/index.d.ts",

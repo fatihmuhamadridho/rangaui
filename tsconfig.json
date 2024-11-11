@@ -1,5 +1,5 @@
 {
-  "include": ["./scripts", "./packages/core/*/src", "./apps/*"],
+  "include": ["./scripts", "./packages/core/src", "./apps/*"],
   "exclude": [
     "node_modules",
     "./packages/core/lib/**/*",
