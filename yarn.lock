@@ -799,6 +799,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^22.9.0":
+  version: 22.9.0
+  resolution: "@types/node@npm:22.9.0"
+  dependencies:
+    undici-types: "npm:~6.19.8"
+  checksum: 10c0/3f46cbe0a49bab4ba30494025e4c8a6e699b98ac922857aa1f0209ce11a1313ee46e6808b8f13fe5b8b960a9d7796b77c8d542ad4e9810e85ef897d5593b5d51
+  languageName: node
+  linkType: hard
+
 "@types/prop-types@npm:*":
   version: 15.7.13
   resolution: "@types/prop-types@npm:15.7.13"
@@ -4834,7 +4843,7 @@ __metadata:
     eslint-config-next: "npm:15.0.3"
     next: "npm:15.0.3"
     postcss: "npm:^8"
-    rangkaui-next: "workspace:*"
+    rangkaui-next: "npm:*"
     react: "npm:19.0.0-rc-66855b96-20241106"
     react-dom: "npm:19.0.0-rc-66855b96-20241106"
     tailwindcss: "npm:^3.4.1"
@@ -4842,7 +4851,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"rangkaui-next@workspace:*, rangkaui-next@workspace:packages/next":
+"rangkaui-next@npm:*, rangkaui-next@workspace:packages/next":
   version: 0.0.0-use.local
   resolution: "rangkaui-next@workspace:packages/next"
   dependencies:
@@ -4861,6 +4870,7 @@ __metadata:
   resolution: "rangkaui-root@workspace:."
   dependencies:
     "@eslint/js": "npm:^9.14.0"
+    "@types/node": "npm:^22.9.0"
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18.3.1"
     "@types/rimraf": "npm:^4.0.5"
@@ -5963,7 +5973,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~6.19.2":
+"undici-types@npm:~6.19.2, undici-types@npm:~6.19.8":
   version: 6.19.8
   resolution: "undici-types@npm:6.19.8"
   checksum: 10c0/078afa5990fba110f6824823ace86073b4638f1d5112ee26e790155f481f2a868cc3e0615505b6f4282bdf74a3d8caad715fd809e870c2bb0704e3ea6082f344
