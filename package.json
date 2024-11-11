@@ -14,7 +14,7 @@
   "scripts": {
     "docs": "yarn workspace rangkaui-docs dev",
     "clean": "rimraf --glob packages/*/{esm,cjs,lib,dist} packages/*/*.tsbuildinfo",
-    "build": "yarn workspace @rangkaui/next build"
+    "build": "yarn workspace rangkaui-next build"
   },
   "dependencies": {
     "react": "^18.3.1",
