@@ -1,6 +1,11 @@
 {
-  "include": ["./scripts", "rangkaui/src", "./apps/*"],
-  "exclude": ["node_modules", "./rangkaui/lib/**/*", "./rangkaui/esm/**/*", "./rangkaui/cjs/**/*"],
+  "include": ["./scripts", "packages/next/src", "./apps/*"],
+  "exclude": [
+    "node_modules",
+    "packages/next/lib/**/*",
+    "packages/next/esm/**/*",
+    "packages/next/cjs/**/*"
+  ],
   "compilerOptions": {
     "types": ["node"],
     "target": "ES2015",

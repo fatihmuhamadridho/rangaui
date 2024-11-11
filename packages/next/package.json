@@ -1,6 +1,6 @@
 {
-  "name": "rangkaui",
-  "version": "0.0.7",
+  "name": "rangkaui-next",
+  "version": "0.0.1",
   "main": "./cjs/index.cjs",
   "module": "./esm/index.mjs",
   "types": "./lib/index.d.ts",
@@ -10,7 +10,7 @@
     "build:esm": "tsc --project tsconfig.build.json --module ESNext --outDir esm",
     "build:cjs": "tsc --project tsconfig.build.json --module CommonJS --outDir cjs",
     "postbuild": "node scripts/postbuild.js",
-    "build": "yarn clean && yarn build:types && yarn build:esm && yarn build:cjs && yarn postbuild",
+    "build": "yarn build:types && yarn build:esm && yarn build:cjs && yarn postbuild",
     "publish": "npm publish --access public --tag latest"
   },
   "files": [

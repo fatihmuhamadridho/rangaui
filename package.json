@@ -8,18 +8,16 @@
     "node": ">=18.20.3"
   },
   "workspaces": [
-    "rangkaui",
+    "packages/*",
     "apps/*"
   ],
   "scripts": {
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "clean": "rimraf --glob rangkaui/{esm,cjs,lib,dist} rangkaui/*.tsbuildinfo rangkaui/styles.css rangkaui/styles.layer.css"
+    "docs": "yarn workspace rangkaui-docs dev",
+    "clean": "rimraf --glob packages/*/{esm,cjs,lib,dist} packages/*/*.tsbuildinfo",
+    "build": "yarn workspace @rangkaui/next build"
   },
   "devDependencies": {
     "@eslint/js": "^9.14.0",
-    "@storybook/nextjs": "^8.4.2",
-    "@storybook/react": "^8.4.2",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@types/rimraf": "^4.0.5",
@@ -30,7 +28,6 @@
     "prettier": "3.3.3",
     "react-dom": "^18.3.1",
     "rimraf": "^6.0.1",
-    "storybook": "^8.4.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.13.0"
