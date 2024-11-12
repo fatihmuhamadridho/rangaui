@@ -21,27 +21,29 @@ function getAllFiles(dir, ext) {
   return results;
 }
 
-// Function to replace .js with .mjs/.cjs in import/export statements
+// Function to replace .js with .mjs/.cjs in import/export statements and .module.css to .module.css.mjs/.module.css.cjs
 function replaceImportPaths(filePath, ext) {
   const content = fs.readFileSync(filePath, 'utf8');
   const updatedContent = content
-    .replace(/(from\s+['"].*?)(\.js)(['"])/g, `$1${ext}$3`)
-    .replace(/(require\(['"].*?)(\.js)(['"]\))/g, `$1${ext}$3`);
+    .replace(/(\.\/.*?)(\.js)(['"])/g, `$1.${ext}$3`) // Replace only .js at the end of imports/exports
+    .replace(/(from\s+['"].*?)(\.module\.css)(['"])/g, `$1.module.css.${ext}$3`) // Replace only .module.css in imports
+    .replace(/(require\(['"].*?)(\.module\.css)(['"]\))/g, `$1.module.css.${ext}$3`); // Replace only .module.css in require statements
+
   fs.writeFileSync(filePath, updatedContent);
 }
 
-// Process ESM files (.js to .mjs)
+// Process ESM files (.js to .mjs and .module.css to .module.css.mjs)
 getAllFiles(esmDir, '.js').forEach((file) => {
-  const newFilePath = file.replace(/\.js$/, '.mjs');
+  const newFilePath = file.replace(/\.js$/, '.mjs'); // Change file extension to .mjs
   fs.renameSync(file, newFilePath);
-  replaceImportPaths(newFilePath, '.mjs');
+  replaceImportPaths(newFilePath, 'mjs');
 });
 
-// Process CJS files (.js to .cjs)
+// Process CJS files (.js to .cjs and .module.css to .module.css.cjs)
 getAllFiles(cjsDir, '.js').forEach((file) => {
-  const newFilePath = file.replace(/\.js$/, '.cjs');
+  const newFilePath = file.replace(/\.js$/, '.cjs'); // Change file extension to .cjs
   fs.renameSync(file, newFilePath);
-  replaceImportPaths(newFilePath, '.cjs');
+  replaceImportPaths(newFilePath, 'cjs');
 });
 
 console.log('Post-build processing complete. All .js files renamed and imports updated.');

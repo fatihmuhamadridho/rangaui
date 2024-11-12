@@ -1,0 +1,17 @@
+/* .accordion {} */
+
+.accordionControl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 16px;
+}
+
+.accordionControl:hover {
+    background-color: gray;
+}
+
+.accordionControl:active {
+    background-color: gray;
+}

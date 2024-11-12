@@ -6,17 +6,21 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "clean": "rimraf --glob {esm,cjs,lib,dist} *.tsbuildinfo styles.css styles.layer.css",
+    "build:css": "tsx scripts/generateCSS.ts",
     "build:types": "tsc --project tsconfig.json && cp lib/index.d.ts lib/index.d.mts",
     "build:esm": "tsc --project tsconfig.build.json --module ESNext --outDir esm",
     "build:cjs": "tsc --project tsconfig.build.json --module CommonJS --outDir cjs",
     "postbuild": "node scripts/postbuild.js",
-    "build": "yarn build:types && yarn build:esm && yarn build:cjs && yarn postbuild",
+    "build": "yarn clean && yarn build:css && yarn build:types && yarn build:esm && yarn build:cjs && yarn postbuild",
     "publish": "npm publish --access public --tag latest"
   },
   "files": [
     "cjs",
     "esm",
     "lib"
+  ],
+  "sideEffects": [
+    "*.css"
   ],
   "exports": {
     ".": {
@@ -28,7 +32,13 @@
         "types": "./lib/index.d.ts",
         "default": "./cjs/index.cjs"
       }
-    }
+    },
+    "./styles/global.css": "./styles/global.css"
+  },
+  "repository": {
+    "url": "https://github.com/fatihmuhamadridho/rangkaui",
+    "type": "git",
+    "directory": "packages/next"
   },
   "peerDependencies": {
     "react": "^18.x || ^19.x",

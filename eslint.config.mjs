@@ -11,4 +11,11 @@ export default [
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
   { ignores: ['**/*.{mjs,cjs,js,d.ts,d.mts}'] },
   { languageOptions: { globals: globals.browser } },
+  {
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+      'no-undef': 'off',
+      'no-unused-vars': 'off',
+    },
+  },
 ];
