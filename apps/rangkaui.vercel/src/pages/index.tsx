@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion, Box, Flex } from 'rangkaui-next';
+import { Accordion, Box, Button, Flex, Text, TextInput } from 'rangkaui-next';
 
 const HomePage = () => {
   return (
@@ -21,6 +21,9 @@ const HomePage = () => {
           <Accordion.Panel>awdaa</Accordion.Panel>
         </Accordion.Item>
       </Accordion>
+      <Text>awdada</Text>
+      <TextInput label="input" />
+      <Button>Button</Button>
     </div>
   );
 };

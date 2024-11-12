@@ -1,0 +1,9 @@
+.activeThumbContainer {
+    background-color: #3b82f6;
+    border: 1px solid #3b82f6;
+}
+
+.offThumbContainer {
+    background-color: #6b7280;
+    border: 1px solid #6b7280;
+}
