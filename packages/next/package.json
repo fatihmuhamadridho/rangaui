@@ -5,13 +5,13 @@
   "module": "./esm/index.mjs",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "clean": "rimraf --glob {esm,cjs,lib,dist} *.tsbuildinfo styles.css styles.layer.css",
+    "clean": "rimraf --glob {esm,cjs,lib,dist} *.tsbuildinfo styles.css styles.layer.css || true",
     "build:css": "tsx scripts/generateCSS.ts",
     "build:types": "tsc --project tsconfig.json && cp lib/index.d.ts lib/index.d.mts",
     "build:esm": "tsc --project tsconfig.build.json --module ESNext --outDir esm",
     "build:cjs": "tsc --project tsconfig.build.json --module CommonJS --outDir cjs",
     "postbuild": "node scripts/postbuild.js",
-    "build": "yarn clean && yarn build:css && yarn build:types && yarn build:esm && yarn build:cjs && yarn postbuild",
+    "build": "yarn build:css && yarn build:types && yarn build:esm && yarn build:cjs && yarn postbuild",
     "publish": "npm publish --access public --tag latest"
   },
   "files": [
