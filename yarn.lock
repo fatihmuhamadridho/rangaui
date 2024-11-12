@@ -5370,6 +5370,7 @@ __metadata:
     react: "npm:^18.3.0"
     react-dom: "npm:^18.3.0"
     tailwindcss: "npm:^3.4.1"
+    tsx: "npm:^4.19.2"
     typescript: "npm:^5"
   languageName: unknown
   linkType: soft
