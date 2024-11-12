@@ -1,4 +1,15 @@
 export { default as Accordion } from './components/Accordion/Accordion.js';
 export { default as Box } from './components/Box/Box.js';
+export { default as Button } from './components/Button/Button.js';
+export { default as DataTable } from './components/DataTable/DataTable.js';
+export { default as Divider } from './components/Divider/Divider.js';
 export { default as Flex } from './components/Flex/Flex.js';
+export { Formulir, Form } from './components/Formulir/Formulir.js';
+export { default as NPRogress } from './components/NPRogress/NPRogress.js';
+export { default as Select } from './components/Select/Select.js';
+export { default as Space } from './components/Space/Space.js';
+export { default as Stack } from './components/Stack/Stack.js';
+export { default as Switch } from './components/Switch/Switch.js';
+export { default as Text } from './components/Text/Text.js';
+export { default as TextArea } from './components/TextArea/TextArea.js';
 export { default as TextInput } from './components/TextInput/TextInput.js';

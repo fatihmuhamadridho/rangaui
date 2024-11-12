@@ -1,0 +1,11 @@
+.optionSelect {
+    border-bottom: 1px solid gray;
+}
+
+.optionSelect:last-child {
+    border: none;
+}
+
+.optionSelect:hover {
+    background-color: gray;
+}

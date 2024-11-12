@@ -1,0 +1,1 @@
+{"version":3,"sources":["Select.module.css"],"names":[],"mappings":"AAAA;IACI,6BAA6B;AACjC;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,sBAAsB;AAC1B","file":"Select.module.css","sourcesContent":[".optionSelect {\n    border-bottom: 1px solid gray;\n}\n\n.optionSelect:last-child {\n    border: none;\n}\n\n.optionSelect:hover {\n    background-color: gray;\n}"]}
