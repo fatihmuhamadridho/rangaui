@@ -1,5 +1,15 @@
 import React from 'react';
-import { Accordion, Box, Button, Flex, Select, Stack, Text, TextInput } from 'rangkaui-next';
+import {
+  Accordion,
+  Box,
+  Button,
+  Flex,
+  Select,
+  Stack,
+  Text,
+  TextInput,
+  Switch,
+} from 'rangkaui-next';
 
 const HomePage = () => {
   return (
@@ -23,6 +33,7 @@ const HomePage = () => {
       <Select data={[{ label: 'test', value: 'test' }]} />
       <TextInput label="input" />
       <Button>Button</Button>
+      <Switch label="switch" />
     </Stack>
   );
 };
