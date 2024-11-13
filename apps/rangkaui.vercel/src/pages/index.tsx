@@ -1,12 +1,10 @@
 import React from 'react';
-import { Accordion, Box, Button, Flex, Text, TextInput } from 'rangkaui-next';
+import { Accordion, Box, Button, Flex, Stack, Text, TextInput } from 'rangkaui-next';
 
 const HomePage = () => {
   return (
-    <div>
-      <Box p={12} style={{ background: 'black', color: 'white' }}>
-        awdaad
-      </Box>
+    <Stack>
+      <Box>awdaad</Box>
       <Flex direction="column">
         <Box>adawda</Box>
         <Box>awdada</Box>
@@ -24,7 +22,7 @@ const HomePage = () => {
       <Text>awdada</Text>
       <TextInput label="input" />
       <Button>Button</Button>
-    </div>
+    </Stack>
   );
 };
 
