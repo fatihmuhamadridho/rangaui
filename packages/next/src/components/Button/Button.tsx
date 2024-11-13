@@ -1,4 +1,5 @@
 import React, { CSSProperties, MouseEventHandler, useMemo } from 'react';
+import classes from './Button.module.css';
 
 interface ButtonProps {
   children?: React.ReactNode;
@@ -13,21 +14,10 @@ interface ButtonProps {
   fullWidth?: boolean;
 }
 
-const defaultStyle: CSSProperties = {
-  borderRadius: 4,
-  maxWidth: 'min-content',
-  paddingBottom: 4,
-  paddingLeft: 8,
-  paddingRight: 8,
-  paddingTop: 4,
-  borderColor: 'black',
-  borderWidth: 1,
-};
-
 const Button = (props: ButtonProps) => {
   const {
     children,
-    className,
+    className = '',
     style,
     type,
     onClick,
@@ -48,11 +38,16 @@ const Button = (props: ButtonProps) => {
     if (py) strictResult = { ...strictResult, paddingBottom: py, paddingTop: py };
     if (c) strictResult = { ...strictResult, color: c };
 
-    return { ...defaultStyle, ...result, ...style, ...strictResult };
+    return { ...result, ...style, ...strictResult };
   }, [fullWidth, style, p, px, py, c]);
 
   return (
-    <button className={className} style={buttonStyle} type={type} onClick={onClick}>
+    <button
+      className={`${classes['rangkaui-button']} ${className}`}
+      style={buttonStyle}
+      type={type}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
