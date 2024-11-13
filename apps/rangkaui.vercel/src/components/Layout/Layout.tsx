@@ -11,7 +11,7 @@ const MdxProvider = ({ children }: MdxProviderProps) => {
 
   useEffect(() => {
     if (!isClient) setIsClient(true);
-  }, []);
+  }, [isClient]);
 
   return (
     <Box className="min-h-screen h-full flex flex-col">
