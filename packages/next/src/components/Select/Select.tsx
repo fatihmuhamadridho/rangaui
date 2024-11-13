@@ -1,6 +1,6 @@
 /* eslint-disable no-prototype-builtins */
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import styles from './Select.module.css';
+import classes from './Select.module.css';
 
 interface SelectProps {
   label?: string;
@@ -12,7 +12,7 @@ interface SelectProps {
 
 const Select = (props: SelectProps) => {
   const { label, placeholder, data, onChange, value } = props;
-  const defaultTop = 24 * 2 + 4 + 4 + 1 + 1;
+  const defaultTop = 34;
   const [show, setShow] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<string>('');
@@ -113,6 +113,7 @@ const Select = (props: SelectProps) => {
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <div>{label}</div>
         <input
+          className={classes['rangkaui-select-input']}
           placeholder={placeholder}
           value={renderValue}
           onChange={() => {}}
@@ -122,12 +123,12 @@ const Select = (props: SelectProps) => {
       {show && (
         <div
           style={{
-            background: 'black',
-            border: '1px solid white',
+            backgroundColor: 'white',
+            border: '1px solid black',
             borderRadius: 4,
             padding: 4,
             position: 'absolute',
-            top: defaultTop + 10,
+            top: defaultTop + 6,
             width: '100%',
             zIndex: 300,
           }}
@@ -138,8 +139,8 @@ const Select = (props: SelectProps) => {
             renderData?.map((item) => (
               <React.Fragment key={item.value}>
                 <div
-                  className={styles.optionSelect}
-                  style={{ cursor: 'pointer', padding: 8 }}
+                  className={classes.optionSelect}
+                  style={{ cursor: 'pointer', padding: '4px 8px' }}
                   onClick={() => hanadleSelectItem(item.value)}
                 >
                   {item.label}
@@ -148,7 +149,7 @@ const Select = (props: SelectProps) => {
             ))
           ) : (
             <React.Fragment>
-              <div style={{ minHeight: 40, padding: 8 }}></div>
+              <div style={{ minHeight: 40, padding: '4px 8px' }}></div>
             </React.Fragment>
           )}
         </div>
