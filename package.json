@@ -12,7 +12,7 @@
     "apps/*"
   ],
   "scripts": {
-    "docs": "yarn workspace rangkaui-docs dev",
+    "dev": "yarn workspace rangkaui-docs dev",
     "clean": "rimraf --glob packages/*/{esm,cjs,lib,dist} packages/*/*.tsbuildinfo || true",
     "build": "yarn workspace rangkaui-next build",
     "build-vercel": "tsx ./scripts/build-vercel.ts"
