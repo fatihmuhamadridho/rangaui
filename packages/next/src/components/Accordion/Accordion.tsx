@@ -46,7 +46,7 @@ const AccordionControl = (props: AccordionControlProps) => {
   return (
     <div
       className={styles.accordionControl}
-      style={{ borderBottom: !isActive ? '1px solid gray' : 'none' }}
+      style={{ borderBottom: !isActive ? '1px solid #c9c9c9' : 'none' }}
       onClick={onClick}
     >
       <div>{children}</div>
@@ -101,7 +101,7 @@ const AccordionPanel = (props: AccordionPanelProps) => {
     <div
       ref={contentRef}
       style={{
-        borderBottom: isActive ? '1px solid gray' : 'none',
+        borderBottom: isActive ? '1px solid #c9c9c9' : 'none',
         height: height,
         opacity: isActive ? 1 : 0,
         overflow: 'hidden',

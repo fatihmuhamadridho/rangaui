@@ -104,8 +104,7 @@ const TextInput = (props: TextInputProps) => {
           name={name}
           placeholder={placeholder}
           style={{
-            backgroundColor: 'black',
-            border: '1px solid gray',
+            border: '1px solid black',
             borderRadius: 4,
             padding: 4,
             paddingLeft: leftSection ? leftSectionWidth : 8,
