@@ -24,16 +24,8 @@
   ],
   "exports": {
     ".": {
-      "import": {
-        "types": "./lib/index.d.mts",
-        "default": "./esm/index.mjs"
-      },
-      "require": {
-        "types": "./lib/index.d.ts",
-        "default": "./cjs/index.cjs"
-      }
-    },
-    "./styles/global.css": "./styles/global.css"
+      "default": "./src/index.ts"
+    }
   },
   "repository": {
     "url": "https://github.com/fatihmuhamadridho/rangkaui",

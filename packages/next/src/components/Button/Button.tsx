@@ -20,6 +20,8 @@ const defaultStyle: CSSProperties = {
   paddingLeft: 8,
   paddingRight: 8,
   paddingTop: 4,
+  borderColor: 'black',
+  borderWidth: 1,
 };
 
 const Button = (props: ButtonProps) => {
