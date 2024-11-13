@@ -1,6 +1,6 @@
 {
   "name": "rangkaui-next",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./cjs/index.cjs",
   "module": "./esm/index.mjs",
   "types": "./lib/index.d.ts",
@@ -36,7 +36,7 @@
     "./styles/global.css": "./styles/global.css"
   },
   "repository": {
-    "url": "https://github.com/fatihmuhamadridho/rangkaui",
+    "url": "git+https://github.com/fatihmuhamadridho/rangkaui.git",
     "type": "git",
     "directory": "packages/next"
   },
