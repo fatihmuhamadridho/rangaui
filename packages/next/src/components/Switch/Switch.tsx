@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import styles from './Switch.module.css';
 
 interface SwitchProps {
@@ -68,7 +68,7 @@ const Switch = (props: SwitchProps) => {
             left: '1px',
             position: 'absolute',
             right: '1px',
-            transform: isActive ? 'translateX(calc(100%+8px))' : 'translateX(0)',
+            transform: isActive ? 'translateX(calc(100% + 8px))' : 'translateX(0)',
             transition: 'all',
             transitionDuration: '150ms',
             width: 12,
