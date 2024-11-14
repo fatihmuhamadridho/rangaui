@@ -12,9 +12,16 @@ import {
   Formulir,
   Form,
   DataTable,
+  HeadersDataTableProps,
 } from 'rangkaui-next';
 
 const HomePage = () => {
+  const headers: HeadersDataTableProps[] = [
+    { key: 'index', label: 'no' },
+    { key: 'username', label: 'username' },
+  ];
+  const data = [{ username: 'fatih' }];
+
   return (
     <Stack>
       <Box>awdaad</Box>
@@ -53,13 +60,7 @@ const HomePage = () => {
           </Form>
         )}
       </Formulir>
-      <DataTable
-        headers={[
-          { key: 'index', label: 'no' },
-          { key: 'username', label: 'username' },
-        ]}
-        data={[{ username: 'fatih' }]}
-      />
+      <DataTable headers={headers} data={data} />
     </Stack>
   );
 };
