@@ -1,4 +1,3 @@
-/* eslint-disable no-prototype-builtins */
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import classes from './Select.module.css';
 
@@ -16,7 +15,7 @@ const Select = (props: SelectProps) => {
   const defaultTop = 34;
   const [show, setShow] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const [result, setResult] = useState<string>('');
+  const [result, setResult] = useState<string>(value || '');
   const selectRef = useRef<any>(null);
 
   useEffect(() => {
@@ -32,7 +31,7 @@ const Select = (props: SelectProps) => {
   }, []);
 
   useEffect(() => {
-    if (value && result === '') {
+    if (value !== undefined && value !== result) {
       setResult(value);
     }
   }, [value, result]);
@@ -58,7 +57,8 @@ const Select = (props: SelectProps) => {
       (item) =>
         typeof item === 'object' &&
         item !== null &&
-        !(item.hasOwnProperty('label') && item.hasOwnProperty('value'))
+        !Object.hasOwn(item, 'label') &&
+        Object.hasOwn(item, 'value')
     );
 
     if (hasMixedTypes || (!isDataString && !isDataObject)) {
@@ -96,7 +96,7 @@ const Select = (props: SelectProps) => {
 
   const renderValue = useMemo(() => {
     const findData = renderData?.find((item) => item?.value === result);
-    return findData?.label;
+    return findData ? findData.label : '';
   }, [result, renderData]);
 
   const hanadleSelectItem = (event: string) => {
@@ -117,8 +117,9 @@ const Select = (props: SelectProps) => {
           name={name}
           className={classes['rangkaui-select-input']}
           placeholder={placeholder}
-          value={renderValue}
+          value={renderValue || ''}
           onFocus={handleShow}
+          onChange={() => {}}
         />
       </div>
       {show && (
