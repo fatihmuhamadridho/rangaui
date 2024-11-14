@@ -11,6 +11,7 @@ import {
   Switch,
   Formulir,
   Form,
+  DataTable,
 } from 'rangkaui-next';
 
 const HomePage = () => {
@@ -41,8 +42,8 @@ const HomePage = () => {
             <Stack>
               <Select
                 data={[{ label: 'test', value: 'test' }]}
-                onChange={handleChange}
                 name="select"
+                onChange={handleChange}
                 value={values.select}
               />
               <TextInput label="input" name="input" onChange={handleChange} value={values.input} />
@@ -52,6 +53,13 @@ const HomePage = () => {
           </Form>
         )}
       </Formulir>
+      <DataTable
+        headers={[
+          { key: 'index', label: 'no' },
+          { key: 'username', label: 'username' },
+        ]}
+        data={[{ username: 'fatih' }]}
+      />
     </Stack>
   );
 };

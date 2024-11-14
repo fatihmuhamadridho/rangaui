@@ -7,7 +7,7 @@ export interface DataTableProps {
 
 export interface HeadersDataTableProps {
   label: string;
-  key: 'index' | any | ((item: any, index: number) => React.ReactNode);
+  key: 'index' | ((item: any, index: number) => React.ReactNode) | (string & {});
 }
 
 const DataTable = (props: DataTableProps) => {
