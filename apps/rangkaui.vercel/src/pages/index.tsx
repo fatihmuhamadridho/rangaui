@@ -22,8 +22,26 @@ const HomePage = () => {
   const headers: HeadersDataTableProps[] = [
     { key: 'index', label: 'no' },
     { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
   ];
-  const data = [{ username: 'fatih' }];
+  const data = [
+    { username: 'fatih' },
+    { username: 'fatih' },
+    { username: 'fatih' },
+    { username: 'fatih' },
+  ];
 
   return (
     <Stack>
