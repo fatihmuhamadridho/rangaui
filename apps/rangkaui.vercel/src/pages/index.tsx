@@ -9,6 +9,8 @@ import {
   Text,
   TextInput,
   Switch,
+  Formulir,
+  Form,
 } from 'rangkaui-next';
 
 const HomePage = () => {
@@ -30,10 +32,26 @@ const HomePage = () => {
         </Accordion.Item>
       </Accordion>
       <Text>awdada</Text>
-      <Select data={[{ label: 'test', value: 'test' }]} />
-      <TextInput label="input" />
-      <Button>Button</Button>
-      <Switch label="switch" />
+      <Formulir
+        initialValues={{ input: '', select: '' }}
+        onSubmit={(values) => console.log(values)}
+      >
+        {({ handleSubmit, handleChange, values }) => (
+          <Form onSubmit={handleSubmit}>
+            <Stack>
+              <Select
+                data={[{ label: 'test', value: 'test' }]}
+                onChange={handleChange}
+                name="select"
+                value={values.select}
+              />
+              <TextInput label="input" name="input" onChange={handleChange} value={values.input} />
+              <Switch label="switch" checked={true} />
+              <Button>Button</Button>
+            </Stack>
+          </Form>
+        )}
+      </Formulir>
     </Stack>
   );
 };

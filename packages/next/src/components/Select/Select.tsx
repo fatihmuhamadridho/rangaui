@@ -6,12 +6,13 @@ interface SelectProps {
   label?: string;
   placeholder?: string;
   data?: string[] | Array<{ label: string; value: string }>;
+  name?: string;
   onChange?: (...props: any) => any;
   value?: string;
 }
 
 const Select = (props: SelectProps) => {
-  const { label, placeholder, data, onChange, value } = props;
+  const { label, placeholder, data, name, onChange, value } = props;
   const defaultTop = 34;
   const [show, setShow] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -94,7 +95,7 @@ const Select = (props: SelectProps) => {
   }, [data]);
 
   const renderValue = useMemo(() => {
-    const findData = renderData?.find((item) => item.value === result);
+    const findData = renderData?.find((item) => item?.value === result);
     return findData?.label;
   }, [result, renderData]);
 
@@ -103,8 +104,8 @@ const Select = (props: SelectProps) => {
     if (event === result) setResult('');
     if (event !== result) setResult(event);
     if (onChange) {
-      if (event === result) onChange('');
-      if (event !== result) onChange(event);
+      if (event === result) onChange({ target: { name: name || '', value: '' } });
+      if (event !== result) onChange({ target: { name: name || '', value: event } });
     }
   };
 
@@ -113,10 +114,10 @@ const Select = (props: SelectProps) => {
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <div>{label}</div>
         <input
+          name={name}
           className={classes['rangkaui-select-input']}
           placeholder={placeholder}
           value={renderValue}
-          onChange={() => {}}
           onFocus={handleShow}
         />
       </div>
