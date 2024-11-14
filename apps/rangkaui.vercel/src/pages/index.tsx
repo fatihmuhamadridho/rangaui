@@ -13,6 +13,9 @@ import {
   Form,
   DataTable,
   HeadersDataTableProps,
+  Divider,
+  Space,
+  TextArea,
 } from 'rangkaui-next';
 
 const HomePage = () => {
@@ -41,7 +44,7 @@ const HomePage = () => {
       </Accordion>
       <Text>awdada</Text>
       <Formulir
-        initialValues={{ input: '', select: '' }}
+        initialValues={{ input: '', select: '', textarea: '' }}
         onSubmit={(values) => console.log(values)}
       >
         {({ handleSubmit, handleChange, values }) => (
@@ -55,6 +58,9 @@ const HomePage = () => {
               />
               <TextInput label="input" name="input" onChange={handleChange} value={values.input} />
               <Switch label="switch" checked={true} />
+              <Space />
+              <TextArea label="textarea" onChange={handleChange} value={values.textarea} />
+              <Divider />
               <Button>Button</Button>
             </Stack>
           </Form>

@@ -10,7 +10,9 @@ interface FormulirProps<T extends FormValues> {
   onSubmit?: (values: T) => void;
   children?: (props: {
     handleSubmit: (e: React.FormEvent) => void;
-    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    handleChange: (
+      e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
+    ) => void;
     setFieldValue: (field: keyof T, value: string) => void;
     values: T;
   }) => React.ReactNode;
@@ -18,7 +20,9 @@ interface FormulirProps<T extends FormValues> {
 
 interface FormContextProps<T> {
   handleSubmit: (e: React.FormEvent) => void;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChange: (
+    e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
+  ) => void;
   setFieldValue: (field: keyof T, value: string) => void;
   values: T;
 }
@@ -38,7 +42,9 @@ const Formulir = <T extends FormValues>({
     }
   }, [initialValues, enableReinitialize]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setValues({
       ...values,
