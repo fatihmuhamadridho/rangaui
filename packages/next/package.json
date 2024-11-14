@@ -1,9 +1,20 @@
 {
   "name": "rangkaui-next",
   "version": "0.0.2",
-  "main": "./cjs/index.cjs",
-  "module": "./esm/index.mjs",
-  "types": "./lib/index.d.ts",
+  "description": "React components library focused on usability, accessibility and developer experience",
+  "homepage": "https://rangkaui.vercel.app/",
+  "license": "MIT",
+  "author": "Fatih Muhamad Ridho <fatihmuhamadridho1@gmail.com>",
+  "keywords": [
+    "components",
+    "design",
+    "frontend",
+    "library",
+    "next",
+    "nextjs",
+    "ui",
+    "ui-kit"
+  ],
   "scripts": {
     "clean": "rimraf --glob {esm,cjs,lib,dist} *.tsbuildinfo styles.css styles.layer.css || true",
     "build:css": "tsx scripts/generateCSS.ts",
@@ -22,6 +33,9 @@
   "sideEffects": [
     "*.css"
   ],
+  "main": "./cjs/index.cjs",
+  "module": "./esm/index.mjs",
+  "types": "./lib/index.d.ts",
   "exports": {
     ".": {
       "import": {
