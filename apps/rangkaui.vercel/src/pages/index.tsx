@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Accordion,
   Box,
@@ -19,6 +19,13 @@ import {
 } from 'rangkaui-next';
 
 const HomePage = () => {
+  const [data, setData] = useState<any[]>([
+    { username: 'fatih' },
+    { username: 'fatih' },
+    { username: 'fatih' },
+    { username: 'fatih' },
+  ]);
+
   const headers: HeadersDataTableProps[] = [
     { key: 'index', label: 'no' },
     { key: 'username', label: 'username' },
@@ -36,12 +43,10 @@ const HomePage = () => {
     { key: 'username', label: 'username' },
     { key: 'username', label: 'username' },
   ];
-  const data = [
-    { username: 'fatih' },
-    { username: 'fatih' },
-    { username: 'fatih' },
-    { username: 'fatih' },
-  ];
+
+  const handleSubmitData = () => {
+    setData(data?.concat([{ username: 'fatih' }]));
+  };
 
   return (
     <Stack>
@@ -61,10 +66,7 @@ const HomePage = () => {
         </Accordion.Item>
       </Accordion>
       <Text>awdada</Text>
-      <Formulir
-        initialValues={{ input: '', select: '', textarea: '' }}
-        onSubmit={(values) => console.log(values)}
-      >
+      <Formulir initialValues={{ input: '', select: '', textarea: '' }} onSubmit={handleSubmitData}>
         {({ handleSubmit, handleChange, values }) => (
           <Form onSubmit={handleSubmit}>
             <Stack>
