@@ -1,11 +1,6 @@
 {
-  "include": ["./scripts", "packages/next/src", "./apps/*"],
-  "exclude": [
-    "node_modules",
-    "packages/next/lib/**/*",
-    "packages/next/esm/**/*",
-    "packages/next/cjs/**/*"
-  ],
+  "include": ["scripts", "packages/*/src", "apps/*"],
+  "exclude": ["node_modules", "packages/*/{lib,esm,cjs}/**/*"],
   "compilerOptions": {
     "types": ["node"],
     "target": "ES2015",

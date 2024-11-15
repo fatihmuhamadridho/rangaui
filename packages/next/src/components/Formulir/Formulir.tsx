@@ -5,12 +5,14 @@ interface FormValues {
 }
 
 interface FormulirProps<T extends FormValues> {
-  initialValues: T;
+  initialValues?: T;
   enableReinitialize?: boolean;
-  onSubmit: (values: T) => void;
-  children: (props: {
+  onSubmit?: (values: T) => void;
+  children?: (props: {
     handleSubmit: (e: React.FormEvent) => void;
-    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    handleChange: (
+      e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
+    ) => void;
     setFieldValue: (field: keyof T, value: string) => void;
     values: T;
   }) => React.ReactNode;
@@ -18,7 +20,9 @@ interface FormulirProps<T extends FormValues> {
 
 interface FormContextProps<T> {
   handleSubmit: (e: React.FormEvent) => void;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChange: (
+    e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
+  ) => void;
   setFieldValue: (field: keyof T, value: string) => void;
   values: T;
 }
@@ -30,7 +34,7 @@ const Formulir = <T extends FormValues>({
   onSubmit,
   children,
 }: FormulirProps<T>) => {
-  const [values, setValues] = useState(initialValues);
+  const [values, setValues] = useState<any>(initialValues);
 
   useEffect(() => {
     if (enableReinitialize) {
@@ -38,7 +42,9 @@ const Formulir = <T extends FormValues>({
     }
   }, [initialValues, enableReinitialize]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setValues({
       ...values,
@@ -47,7 +53,7 @@ const Formulir = <T extends FormValues>({
   };
 
   const setFieldValue = (field: any, value: string) => {
-    setValues((prevValues) => ({
+    setValues((prevValues: any) => ({
       ...prevValues,
       [field as string]: value,
     }));
@@ -55,12 +61,14 @@ const Formulir = <T extends FormValues>({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(values);
+    if (onSubmit) {
+      onSubmit(values);
+    }
   };
 
   return (
     <FormContext.Provider value={{ handleChange, handleSubmit, setFieldValue, values }}>
-      {children({ handleChange, handleSubmit, setFieldValue, values })}
+      {children ? children({ handleChange, handleSubmit, setFieldValue, values }) : null}
     </FormContext.Provider>
   );
 };

@@ -1,4 +1,3 @@
-/* eslint-disable no-prototype-builtins */
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import classes from './Select.module.css';
 
@@ -6,16 +5,17 @@ interface SelectProps {
   label?: string;
   placeholder?: string;
   data?: string[] | Array<{ label: string; value: string }>;
+  name?: string;
   onChange?: (...props: any) => any;
   value?: string;
 }
 
 const Select = (props: SelectProps) => {
-  const { label, placeholder, data, onChange, value } = props;
+  const { label, placeholder, data, name, onChange, value } = props;
   const defaultTop = 34;
   const [show, setShow] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const [result, setResult] = useState<string>('');
+  const [result, setResult] = useState<string>(value || '');
   const selectRef = useRef<any>(null);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const Select = (props: SelectProps) => {
   }, []);
 
   useEffect(() => {
-    if (value && result === '') {
+    if (value !== undefined && value !== result) {
       setResult(value);
     }
   }, [value, result]);
@@ -57,7 +57,8 @@ const Select = (props: SelectProps) => {
       (item) =>
         typeof item === 'object' &&
         item !== null &&
-        !(item.hasOwnProperty('label') && item.hasOwnProperty('value'))
+        !Object.hasOwn(item, 'label') &&
+        Object.hasOwn(item, 'value')
     );
 
     if (hasMixedTypes || (!isDataString && !isDataObject)) {
@@ -94,8 +95,8 @@ const Select = (props: SelectProps) => {
   }, [data]);
 
   const renderValue = useMemo(() => {
-    const findData = renderData?.find((item) => item.value === result);
-    return findData?.label;
+    const findData = renderData?.find((item) => item?.value === result);
+    return findData ? findData.label : '';
   }, [result, renderData]);
 
   const hanadleSelectItem = (event: string) => {
@@ -103,8 +104,8 @@ const Select = (props: SelectProps) => {
     if (event === result) setResult('');
     if (event !== result) setResult(event);
     if (onChange) {
-      if (event === result) onChange('');
-      if (event !== result) onChange(event);
+      if (event === result) onChange({ target: { name: name || '', value: '' } });
+      if (event !== result) onChange({ target: { name: name || '', value: event } });
     }
   };
 
@@ -113,11 +114,12 @@ const Select = (props: SelectProps) => {
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <div>{label}</div>
         <input
+          name={name}
           className={classes['rangkaui-select-input']}
           placeholder={placeholder}
-          value={renderValue}
-          onChange={() => {}}
+          value={renderValue || ''}
           onFocus={handleShow}
+          onChange={() => {}}
         />
       </div>
       {show && (

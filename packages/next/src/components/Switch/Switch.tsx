@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
-import { ChangeEvent, useEffect, useRef, useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 import styles from './Switch.module.css';
 
 interface SwitchProps {
@@ -10,21 +9,15 @@ interface SwitchProps {
 
 const Switch = (props: SwitchProps) => {
   const { label, checked, onChange } = props;
-  const [isFirstLoad, setIsFirstLoad] = useState<boolean>(true);
   const [isActive, setIsActive] = useState(checked ?? false);
   const switchContainerRef = useRef<HTMLDivElement>(null);
   const switchThumbRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (isFirstLoad && isActive !== checked) {
-      setIsFirstLoad(false);
-      setIsActive(checked!);
-    }
-  }, [checked, isActive, isFirstLoad]);
-
   const toggleSwitch = (event: ChangeEvent<HTMLInputElement>) => {
     setIsActive(event.target.checked);
-    onChange && onChange(event.target.checked);
+    if (onChange) {
+      onChange(event.target.checked);
+    }
   };
 
   return (
@@ -39,7 +32,7 @@ const Switch = (props: SwitchProps) => {
       }}
     >
       <input
-        checked={isActive}
+        checked={isActive ?? false}
         style={{ display: 'none' }}
         type="checkbox"
         onChange={toggleSwitch}

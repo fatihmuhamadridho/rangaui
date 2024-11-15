@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Accordion,
   Box,
@@ -9,9 +9,45 @@ import {
   Text,
   TextInput,
   Switch,
+  Formulir,
+  Form,
+  DataTable,
+  HeadersDataTableProps,
+  Divider,
+  Space,
+  TextArea,
 } from 'rangkaui-next';
 
 const HomePage = () => {
+  const [data, setData] = useState<any[]>([
+    { username: 'fatih' },
+    { username: 'fatih' },
+    { username: 'fatih' },
+    { username: 'fatih' },
+  ]);
+
+  const headers: HeadersDataTableProps[] = [
+    { key: 'index', label: 'no' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+    { key: 'username', label: 'username' },
+  ];
+
+  const handleSubmitData = () => {
+    setData(data?.concat([{ username: 'fatih' }]));
+  };
+
   return (
     <Stack>
       <Box>awdaad</Box>
@@ -30,10 +66,27 @@ const HomePage = () => {
         </Accordion.Item>
       </Accordion>
       <Text>awdada</Text>
-      <Select data={[{ label: 'test', value: 'test' }]} />
-      <TextInput label="input" />
-      <Button>Button</Button>
-      <Switch label="switch" />
+      <Formulir initialValues={{ input: '', select: '', textarea: '' }} onSubmit={handleSubmitData}>
+        {({ handleSubmit, handleChange, values }) => (
+          <Form onSubmit={handleSubmit}>
+            <Stack>
+              <Select
+                data={[{ label: 'test', value: 'test' }]}
+                name="select"
+                onChange={handleChange}
+                value={values.select}
+              />
+              <TextInput label="input" name="input" onChange={handleChange} value={values.input} />
+              <Switch label="switch" checked={true} />
+              <Space />
+              <TextArea label="textarea" onChange={handleChange} value={values.textarea} />
+              <Divider />
+              <Button>Button</Button>
+            </Stack>
+          </Form>
+        )}
+      </Formulir>
+      <DataTable headers={headers} data={data} />
     </Stack>
   );
 };
