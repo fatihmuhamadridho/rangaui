@@ -12281,9 +12281,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"rangkaui-angular@workspace:*, rangkaui-angular@workspace:packages/angular/dist/rangkaui-angular":
+"rangkaui-angular@workspace:*, rangkaui-angular@workspace:packages/angular/projects/rangkaui-angular":
   version: 0.0.0-use.local
-  resolution: "rangkaui-angular@workspace:packages/angular/dist/rangkaui-angular"
+  resolution: "rangkaui-angular@workspace:packages/angular/projects/rangkaui-angular"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
