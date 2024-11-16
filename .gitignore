@@ -86,3 +86,4 @@ Thumbs.db
 .angular
 dist
 !/packages/angular/projects/**/*/lib
+/packages/**/*.tgz

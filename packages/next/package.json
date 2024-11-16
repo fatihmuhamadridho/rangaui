@@ -28,7 +28,8 @@
   "files": [
     "cjs",
     "esm",
-    "lib"
+    "lib",
+    "styles"
   ],
   "sideEffects": [
     "*.css"
@@ -62,6 +63,7 @@
     "@types/rimraf": "^4.0.5",
     "replace-in-file": "^8.2.0",
     "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
     "typescript": "^5.6.3"
   }
 }
