@@ -22,7 +22,7 @@
     "build:esm": "tsc --project tsconfig.build.json --module ESNext --outDir esm",
     "build:cjs": "tsc --project tsconfig.build.json --module CommonJS --outDir cjs",
     "postbuild": "node scripts/postbuild.js",
-    "build": "yarn build:css && yarn build:types && yarn build:esm && yarn build:cjs && yarn postbuild",
+    "build": "node scripts/build.js",
     "publish": "npm publish --access public --tag latest"
   },
   "files": [
