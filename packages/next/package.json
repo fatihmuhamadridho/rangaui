@@ -1,6 +1,6 @@
 {
   "name": "rangkaui-next",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "React components library focused on usability, accessibility and developer experience",
   "homepage": "https://rangkaui.vercel.app/",
   "license": "MIT",
@@ -56,6 +56,7 @@
     "directory": "packages/next"
   },
   "peerDependencies": {
+    "next": "^13.x",
     "react": "^18.x || ^19.x",
     "react-dom": "^18.x || ^19.x"
   },

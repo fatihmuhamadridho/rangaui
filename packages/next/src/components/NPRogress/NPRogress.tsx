@@ -1,4 +1,4 @@
-import React, { useRouter } from 'next/router';
+import { useRouter } from 'next/router.js';
 import { useState, useEffect } from 'react';
 
 const NPRogress = () => {
