@@ -13275,7 +13275,6 @@ __metadata:
     rollup-plugin-peer-deps-external: "npm:^2.2.4"
     rollup-plugin-postcss: "npm:^4.0.2"
     rollup-plugin-typescript2: "npm:^0.36.0"
-    sass: "npm:^1.81.0"
     tailwindcss: "npm:^3.4.15"
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.19.2"
@@ -14206,7 +14205,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.69.5, sass@npm:^1.81.0":
+"sass@npm:^1.69.5":
   version: 1.81.0
   resolution: "sass@npm:1.81.0"
   dependencies:

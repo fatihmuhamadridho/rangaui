@@ -6,6 +6,7 @@
   align-items: center;
   cursor: pointer;
   padding: 12px 16px;
+  background-color: white;
 }
 
 .accordionControl:hover {

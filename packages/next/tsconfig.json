@@ -13,5 +13,6 @@
     "declarationDir": "./dist",
     "outDir": "./dist"
   },
-  "include": ["src/**/*", "../../@types/extensions.d.ts"]
+  "include": ["src/**/*", "../../@types/extensions.d.ts"],
+  "exclude": ["dist/*"]
 }

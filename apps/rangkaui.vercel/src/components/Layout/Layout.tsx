@@ -17,8 +17,8 @@ const MdxProvider = ({ children }: MdxProviderProps) => {
 
   return (
     <Box className="min-h-screen h-full flex flex-col">
-      <Box className="fixed p-2 w-full h-14 bg-white border-b border-black z-10">Navbar</Box>
-      <Box className="fixed mt-14 p-2 min-w-64 max-w-64 h-full bg-white border-r border-black overflow-y-auto">
+      <Box className="fixed p-2 w-full h-14 border-b border-black z-10">Navbar</Box>
+      <Box className="fixed mt-14 p-2 min-w-64 max-w-64 h-full border-r border-black overflow-y-auto">
         Sidebar
       </Box>
       <Box className="pt-[calc(56px+8px)] pl-[calc(256px+8px)] p-2 flex-grow h-full overflow-y-auto">

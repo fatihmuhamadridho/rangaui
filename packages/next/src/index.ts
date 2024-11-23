@@ -1,4 +1,4 @@
-import '../styles/styles.css';
+import './styles/styles.css';
 
 export { default as Accordion } from './components/Accordion/Accordion';
 export { default as Box } from './components/Box/Box';

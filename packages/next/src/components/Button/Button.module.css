@@ -3,8 +3,7 @@
   max-width: fit-content;
   border: 1px solid black;
   border-radius: 4px;
-  background-color: black;
-  color: white;
+  background-color: white;
 
   &:hover {
     background-color: #f3f4f6;
