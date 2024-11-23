@@ -1,5 +1,5 @@
 import React, { CSSProperties, MouseEventHandler, useMemo } from 'react';
-import classes from './Button.module.css';
+import classes from './Button.module.scss';
 
 interface ButtonProps {
   children?: React.ReactNode;
