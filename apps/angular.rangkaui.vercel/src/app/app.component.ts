@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { RangkauiAngularModule } from 'rangkaui-angular';
+import { ButtonModule } from 'rangkaui-angular';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RangkauiAngularModule],
+  imports: [RouterOutlet, ButtonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

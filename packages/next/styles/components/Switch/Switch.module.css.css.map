@@ -1,1 +1,0 @@
-{"version":3,"sources":["Switch.module.css"],"names":[],"mappings":"AAAA;EACE,mCAAmC;EACnC,uBAAuB;AACzB;;AAEA;EACE,uBAAuB;EACvB,uBAAuB;AACzB","file":"Switch.module.css","sourcesContent":[".activeThumbContainer {\n  background-color: mediumspringgreen;\n  border: 1px solid green;\n}\n\n.offThumbContainer {\n  background-color: white;\n  border: 1px solid black;\n}\n"]}

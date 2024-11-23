@@ -1,3 +1,5 @@
+import '../styles/styles.css';
+
 export { default as Accordion } from './components/Accordion/Accordion';
 export { default as Box } from './components/Box/Box';
 export { default as Button } from './components/Button/Button';
