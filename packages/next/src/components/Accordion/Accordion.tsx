@@ -101,6 +101,7 @@ const AccordionPanel = (props: AccordionPanelProps) => {
     <div
       ref={contentRef}
       style={{
+        backgroundColor: 'white',
         borderBottom: isActive ? '1px solid #c9c9c9' : 'none',
         height: height,
         opacity: isActive ? 1 : 0,

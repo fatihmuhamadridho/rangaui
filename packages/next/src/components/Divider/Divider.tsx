@@ -1,18 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-empty-object-type */
 import React from 'react';
 import classes from './Divider.module.css';
 import { BasicProps } from '../../types/global';
 import { resolveStyleProp } from '../../helpers';
 
-interface DividerProps extends BasicProps {}
+interface DividerProps extends BasicProps {
+  color?: string;
+}
 
 const Divider = React.forwardRef<HTMLDivElement, DividerProps>((props, ref) => {
-  const { p, m } = props;
+  const { p, m, color } = props;
   return (
     <div
       className={classes['rangkaui-divider']}
-      style={{ padding: resolveStyleProp(p), margin: resolveStyleProp(m) }}
+      style={{ padding: resolveStyleProp(p), margin: resolveStyleProp(m), borderColor: color }}
     ></div>
   );
 });

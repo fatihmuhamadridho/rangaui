@@ -15,7 +15,7 @@
     "incremental": true,
     "paths": {
       "@/*": ["./src/*"],
-      "test-next": ["../../packages/next/src/index.ts"]
+      "rangkaui-next-dev": ["../../packages/next/src/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

@@ -32,8 +32,6 @@ const Button = (props: ButtonProps) => {
 
   const buttonStyle = useMemo(() => {
     return {
-      ...style,
-      ...(fullWidth && { maxWidth: '100%' }),
       margin: resolveStyleProp(m),
       padding: resolveStyleProp(p),
       paddingLeft: resolveStyleProp(px),
@@ -44,6 +42,8 @@ const Button = (props: ButtonProps) => {
       backgroundColor: resolveStyleProp(bg),
       width: resolveStyleProp(w),
       height: resolveStyleProp(h),
+      ...(fullWidth && { maxWidth: '100%' }),
+      ...style,
     };
   }, [style, fullWidth, m, p, px, py, c, bg, w, h]);
 

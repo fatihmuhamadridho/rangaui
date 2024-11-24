@@ -16,7 +16,7 @@ import {
   Divider,
   Space,
   TextArea,
-} from 'rangkaui-next';
+} from 'rangkaui-next-dev';
 
 const HomePage = () => {
   const [data, setData] = useState<any[]>([
@@ -50,10 +50,10 @@ const HomePage = () => {
 
   return (
     <Stack>
-      <Box>awdaad</Box>
+      <Box c={'white'}>Box</Box>
       <Flex direction="column">
-        <Box>adawda</Box>
-        <Box>awdada</Box>
+        <Box c={'white'}>Flex</Box>
+        <Box c={'white'}>Flex</Box>
       </Flex>
       <Accordion>
         <Accordion.Item value="test1">
@@ -65,7 +65,7 @@ const HomePage = () => {
           <Accordion.Panel>awdaa</Accordion.Panel>
         </Accordion.Item>
       </Accordion>
-      <Text>awdada</Text>
+      <Text c={'white'}>awdada</Text>
       <Formulir initialValues={{ input: '', select: '', textarea: '' }} onSubmit={handleSubmitData}>
         {({ handleSubmit, handleChange, values }) => (
           <Form onSubmit={handleSubmit}>
@@ -80,7 +80,7 @@ const HomePage = () => {
               <Switch label="switch" checked={true} />
               <Space />
               <TextArea label="textarea" onChange={handleChange} value={values.textarea} />
-              <Divider />
+              <Divider color="white" />
               <Button>Button</Button>
             </Stack>
           </Form>
