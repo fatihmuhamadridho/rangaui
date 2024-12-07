@@ -6,9 +6,16 @@ interface ModalProps {
   children: React.ReactNode;
   onClose: () => void;
   overlayOpacity?: number;
+  closeOnClickOutside?: boolean;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, children, onClose, overlayOpacity = 0.5 }) => {
+const Modal: React.FC<ModalProps> = ({
+  isOpen,
+  children,
+  onClose,
+  overlayOpacity = 0.5,
+  closeOnClickOutside = true,
+}) => {
   const modalElement = document.createElement('div');
 
   useEffect(() => {
@@ -47,8 +54,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, children, onClose, overlayOpacity
           bottom: 0,
           backgroundColor: `rgba(0, 0, 0, ${overlayOpacity})`,
         }}
-        onClick={onClose}
+        onClick={closeOnClickOutside ? onClose : undefined}
       ></div>
+
       <div
         style={{
           position: 'relative',
@@ -60,7 +68,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, children, onClose, overlayOpacity
           justifyContent: 'center',
           minHeight: '100vh',
         }}
-        onClick={onClose}
+        onClick={closeOnClickOutside ? onClose : undefined}
       >
         <div
           style={{

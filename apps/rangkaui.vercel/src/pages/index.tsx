@@ -90,7 +90,7 @@ const HomePage = () => {
               <Divider color="white" />
               <Flex gap={12}>
                 <Button>Button</Button>
-                <Modal isOpen={open} onClose={() => setOpen(false)}>
+                <Modal isOpen={open} onClose={() => setOpen(false)} closeOnClickOutside={true}>
                   <Box>Modal</Box>
                 </Modal>
                 <Tooltip content="awdadada">
