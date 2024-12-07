@@ -1,0 +1,68 @@
+name: Bug Report
+description: Laporkan masalah atau bug yang Anda temui.
+title: '[BUG] Deskripsikan masalah secara singkat'
+labels: ['bug']
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Terima kasih telah melaporkan bug! Mohon isi detail berikut agar kami dapat membantu Anda dengan cepat.
+
+  - type: input
+    id: bug_description
+    attributes:
+      label: Deskripsi Bug
+      description: Jelaskan bug secara singkat, termasuk apa yang terjadi dan apa yang diharapkan.
+      placeholder: "Contoh: Tombol 'Simpan' tidak berfungsi saat mengklik."
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Langkah untuk Mereproduksi
+      description: Sebutkan langkah-langkah yang dapat kami ikuti untuk mereproduksi bug ini.
+      placeholder: |
+        1. Buka halaman...
+        2. Klik tombol...
+        3. Lihat kesalahan...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Perilaku yang Diharapkan
+      description: Jelaskan apa yang seharusnya terjadi jika bug tidak ada.
+      placeholder: 'Contoh: Setelah mengklik tombol, data harus tersimpan.'
+
+  - type: input
+    id: actual_behavior
+    attributes:
+      label: Perilaku yang Terjadi
+      description: Jelaskan apa yang terjadi saat bug muncul.
+      placeholder: 'Contoh: Setelah mengklik tombol, tidak ada respon.'
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Tingkat Keparahan
+      description: Seberapa serius bug ini?
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Informasi Tambahan
+      description: Sertakan informasi tambahan, seperti tangkapan layar atau log kesalahan, jika ada.
+      placeholder: 'Contoh: Lampirkan tangkapan layar atau salinan log.'
+
+  - type: input
+    id: environment
+    attributes:
+      label: Lingkungan (Environment)
+      description: Sebutkan versi aplikasi, browser, atau perangkat keras yang digunakan.
+      placeholder: 'Contoh: Windows 10, Chrome 117, Node.js 16.15.1'
