@@ -16,6 +16,7 @@ import {
   Divider,
   Space,
   TextArea,
+  Modal,
 } from 'rangkaui-next-dev';
 
 const HomePage = () => {
@@ -25,6 +26,7 @@ const HomePage = () => {
     { username: 'fatih' },
     { username: 'fatih' },
   ]);
+  const [open, setOpen] = useState<boolean>(false);
 
   const headers: HeadersDataTableProps[] = [
     { key: 'index', label: 'no' },
@@ -81,7 +83,15 @@ const HomePage = () => {
               <Space />
               <TextArea label="textarea" onChange={handleChange} value={values.textarea} />
               <Divider color="white" />
-              <Button>Button</Button>
+              <Flex gap={12}>
+                <Button>Button</Button>
+                <Modal isOpen={open} onClose={() => setOpen(false)}>
+                  <div>
+                    <TextInput />
+                  </div>
+                </Modal>
+                <Button onClick={() => setOpen(true)}>Modal</Button>
+              </Flex>
             </Stack>
           </Form>
         )}

@@ -15,5 +15,6 @@ export { default as Switch } from './components/Switch/Switch';
 export { default as Text } from './components/Text/Text';
 export { default as TextArea } from './components/TextArea/TextArea';
 export { default as TextInput } from './components/TextInput/TextInput';
+export { default as Modal } from './components/Modal/Modal';
 
 export type { DataTableProps, HeadersDataTableProps } from './components/DataTable/DataTable';
