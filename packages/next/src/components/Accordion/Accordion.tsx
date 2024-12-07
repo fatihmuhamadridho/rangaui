@@ -1,5 +1,5 @@
 import React, { useState, ReactNode, ReactElement, useEffect, useRef } from 'react';
-import styles from './Accordion.module.css';
+import classes from './Accordion.module.css';
 
 interface AccordionItemProps {
   children?: ReactNode;
@@ -45,7 +45,7 @@ const AccordionControl = (props: AccordionControlProps) => {
 
   return (
     <div
-      className={styles.accordionControl}
+      className={classes.accordionControl}
       style={{ borderBottom: !isActive ? '1px solid #c9c9c9' : 'none' }}
       onClick={onClick}
     >
@@ -101,6 +101,7 @@ const AccordionPanel = (props: AccordionPanelProps) => {
     <div
       ref={contentRef}
       style={{
+        backgroundColor: 'white',
         borderBottom: isActive ? '1px solid #c9c9c9' : 'none',
         height: height,
         opacity: isActive ? 1 : 0,
@@ -145,7 +146,7 @@ const Accordion = (props: AccordionProps) => {
   );
 };
 
-Accordion.classes = styles;
+Accordion.classes = classes;
 Accordion.Item = AccordionItem;
 Accordion.Control = AccordionControl;
 Accordion.Panel = AccordionPanel;

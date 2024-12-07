@@ -70,7 +70,6 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
 .sass-cache/
 /connect.lock
 /coverage
@@ -83,7 +82,5 @@ testem.log
 Thumbs.db
 
 # cache
-.angular
 dist
-!/packages/angular/projects/**/*/lib
 /packages/**/*.tgz

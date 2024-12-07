@@ -16,7 +16,9 @@ import {
   Divider,
   Space,
   TextArea,
-} from 'rangkaui-next';
+  Modal,
+  Tooltip,
+} from 'rangkaui-next-dev';
 
 const HomePage = () => {
   const [data, setData] = useState<any[]>([
@@ -25,6 +27,7 @@ const HomePage = () => {
     { username: 'fatih' },
     { username: 'fatih' },
   ]);
+  const [open, setOpen] = useState<boolean>(false);
 
   const headers: HeadersDataTableProps[] = [
     { key: 'index', label: 'no' },
@@ -50,10 +53,10 @@ const HomePage = () => {
 
   return (
     <Stack>
-      <Box>awdaad</Box>
+      <Box c={'white'}>Box</Box>
       <Flex direction="column">
-        <Box>adawda</Box>
-        <Box>awdada</Box>
+        <Box c={'white'}>Flex</Box>
+        <Box c={'white'}>Flex</Box>
       </Flex>
       <Accordion>
         <Accordion.Item value="test1">
@@ -65,7 +68,11 @@ const HomePage = () => {
           <Accordion.Panel>awdaa</Accordion.Panel>
         </Accordion.Item>
       </Accordion>
-      <Text>awdada</Text>
+      <Box>
+        <Tooltip content="Tooltip">
+          <Text c={'white'}>Text dan Tooltip</Text>
+        </Tooltip>
+      </Box>
       <Formulir initialValues={{ input: '', select: '', textarea: '' }} onSubmit={handleSubmitData}>
         {({ handleSubmit, handleChange, values }) => (
           <Form onSubmit={handleSubmit}>
@@ -80,8 +87,16 @@ const HomePage = () => {
               <Switch label="switch" checked={true} />
               <Space />
               <TextArea label="textarea" onChange={handleChange} value={values.textarea} />
-              <Divider />
-              <Button>Button</Button>
+              <Divider color="white" />
+              <Flex gap={12}>
+                <Button>Button</Button>
+                <Modal isOpen={open} onClose={() => setOpen(false)} closeOnClickOutside={true}>
+                  <Box>Modal</Box>
+                </Modal>
+                <Tooltip content="awdadada">
+                  <Button onClick={() => setOpen(true)}>Modal</Button>
+                </Tooltip>
+              </Flex>
             </Stack>
           </Form>
         )}

@@ -4,11 +4,14 @@ import MdxProvider from '@/components/Layout/Layout';
 
 import '@/styles/globals.css';
 import 'rangkaui-next/dist/styles.css';
+import { ThemeProvider } from '@/contexts/theme';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <MdxProvider>
-      <Component {...pageProps} />
-    </MdxProvider>
+    <ThemeProvider>
+      <MdxProvider>
+        <Component {...pageProps} />
+      </MdxProvider>
+    </ThemeProvider>
   );
 }

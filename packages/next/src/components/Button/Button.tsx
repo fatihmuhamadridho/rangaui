@@ -1,16 +1,14 @@
 import React, { CSSProperties, MouseEventHandler, useMemo } from 'react';
-import classes from './Button.module.scss';
+import classes from './Button.module.css';
+import { BasicProps } from '../../types/global';
+import { resolveStyleProp } from '../../helpers';
 
-interface ButtonProps {
+interface ButtonProps extends BasicProps {
   children?: React.ReactNode;
   className?: string;
   style?: CSSProperties;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   type?: 'submit' | 'reset' | 'button';
-  p?: number;
-  px?: number;
-  py?: number;
-  c?: string;
   fullWidth?: boolean;
 }
 
@@ -21,25 +19,33 @@ const Button = (props: ButtonProps) => {
     style,
     type,
     onClick,
-    p = null,
-    px = null,
-    py = null,
-    c = null,
+    m,
+    p,
+    px,
+    py,
+    c,
+    bg,
+    w,
+    h,
     fullWidth = false,
   } = props;
 
   const buttonStyle = useMemo(() => {
-    let result: CSSProperties = {};
-    let strictResult: CSSProperties = {};
-
-    if (fullWidth) result = { ...result, maxWidth: '100%' };
-    if (p) strictResult = { ...strictResult, padding: p };
-    if (px) strictResult = { ...strictResult, paddingLeft: px, paddingRight: px };
-    if (py) strictResult = { ...strictResult, paddingBottom: py, paddingTop: py };
-    if (c) strictResult = { ...strictResult, color: c };
-
-    return { ...result, ...style, ...strictResult };
-  }, [fullWidth, style, p, px, py, c]);
+    return {
+      margin: resolveStyleProp(m),
+      padding: resolveStyleProp(p),
+      paddingLeft: resolveStyleProp(px),
+      paddingRight: resolveStyleProp(px),
+      paddingTop: resolveStyleProp(py),
+      paddingBottom: resolveStyleProp(py),
+      color: resolveStyleProp(c),
+      backgroundColor: resolveStyleProp(bg),
+      width: resolveStyleProp(w),
+      height: resolveStyleProp(h),
+      ...(fullWidth && { maxWidth: '100%' }),
+      ...style,
+    };
+  }, [style, fullWidth, m, p, px, py, c, bg, w, h]);
 
   return (
     <button

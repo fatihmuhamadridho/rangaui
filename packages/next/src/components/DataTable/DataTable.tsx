@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from './DataTable.module.css';
 
 export interface DataTableProps {
   headers: HeadersDataTableProps[] | null;
@@ -31,20 +32,13 @@ const DataTable = (props: DataTableProps) => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '100%' }}>
-      <div style={{ display: 'block', overflowX: 'auto', whiteSpace: 'nowrap', width: '100%' }}>
-        <table
-          style={{
-            border: '1px solid #64748b',
-            borderCollapse: 'collapse',
-            tableLayout: 'auto',
-            width: '100%',
-          }}
-        >
+    <div className={classes.dataTableContainer}>
+      <div className={classes.dataTableWrapper}>
+        <table className={classes.dataTable}>
           <thead>
             <tr>
               {headers?.map((item, index) => (
-                <th key={index} style={{ border: '1px solid #475569', padding: 4 }}>
+                <th key={index} className={classes.dataTableHeader}>
                   {item.label}
                 </th>
               ))}
@@ -55,10 +49,7 @@ const DataTable = (props: DataTableProps) => {
               return (
                 <tr key={index}>
                   {headers?.map((head, index2) => (
-                    <td
-                      key={index2}
-                      style={{ border: '1px solid #334155', padding: 4, verticalAlign: 'top' }}
-                    >
+                    <td key={index2} className={classes.dataTableCell}>
                       {renderItem(head, item, index)}
                     </td>
                   ))}
@@ -68,21 +59,7 @@ const DataTable = (props: DataTableProps) => {
           </tbody>
         </table>
       </div>
-      {data?.length === 0 && (
-        <div
-          style={{
-            alignItems: 'center',
-            border: '1px solid #475569',
-            borderTop: 0,
-            display: 'flex',
-            justifyContent: 'center',
-            minHeight: 40,
-            width: '100%',
-          }}
-        >
-          Data Tidak Ditemukan
-        </div>
-      )}
+      {data?.length === 0 && <div className={classes.noData}>Data Tidak Ditemukan</div>}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { ChangeEvent, useRef, useState } from 'react';
-import styles from './Switch.module.css';
+import classes from './Switch.module.css';
 
 interface SwitchProps {
   label?: string;
@@ -38,7 +38,7 @@ const Switch = (props: SwitchProps) => {
         onChange={toggleSwitch}
       />
       <div
-        className={isActive ? styles.activeThumbContainer : styles.offThumbContainer}
+        className={isActive ? classes.activeThumbContainer : classes.offThumbContainer}
         ref={switchContainerRef}
         style={{
           alignItems: 'center',
