@@ -60,7 +60,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, children, onClose, overlayOpacity
           justifyContent: 'center',
           minHeight: '100vh',
         }}
-        onClick={(e) => e.stopPropagation()}
+        onClick={onClose}
       >
         <div
           style={{
@@ -72,6 +72,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, children, onClose, overlayOpacity
             borderRadius: '8px',
             boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
           }}
+          onClick={(e) => e.stopPropagation()}
         >
           {children}
         </div>

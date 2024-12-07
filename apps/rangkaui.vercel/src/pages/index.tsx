@@ -86,9 +86,7 @@ const HomePage = () => {
               <Flex gap={12}>
                 <Button>Button</Button>
                 <Modal isOpen={open} onClose={() => setOpen(false)}>
-                  <div>
-                    <TextInput />
-                  </div>
+                  <Box>Modal</Box>
                 </Modal>
                 <Button onClick={() => setOpen(true)}>Modal</Button>
               </Flex>
