@@ -17,6 +17,7 @@ import {
   Space,
   TextArea,
   Modal,
+  Tooltip,
 } from 'rangkaui-next-dev';
 
 const HomePage = () => {
@@ -67,7 +68,11 @@ const HomePage = () => {
           <Accordion.Panel>awdaa</Accordion.Panel>
         </Accordion.Item>
       </Accordion>
-      <Text c={'white'}>awdada</Text>
+      <Box>
+        <Tooltip content="Tooltip">
+          <Text c={'white'}>Text dan Tooltip</Text>
+        </Tooltip>
+      </Box>
       <Formulir initialValues={{ input: '', select: '', textarea: '' }} onSubmit={handleSubmitData}>
         {({ handleSubmit, handleChange, values }) => (
           <Form onSubmit={handleSubmit}>
@@ -88,7 +93,9 @@ const HomePage = () => {
                 <Modal isOpen={open} onClose={() => setOpen(false)}>
                   <Box>Modal</Box>
                 </Modal>
-                <Button onClick={() => setOpen(true)}>Modal</Button>
+                <Tooltip content="awdadada">
+                  <Button onClick={() => setOpen(true)}>Modal</Button>
+                </Tooltip>
               </Flex>
             </Stack>
           </Form>
