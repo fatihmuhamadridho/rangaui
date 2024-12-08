@@ -39,6 +39,9 @@
     "type": "git",
     "directory": "packages/next"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "peerDependencies": {
     "next": "^13.x",
     "react": "^18.x || ^19.x",
