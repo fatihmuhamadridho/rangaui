@@ -39,12 +39,9 @@ jobs:
             exit 1
           fi
 
-      # Change directory to the package
-      - name: Change to package directory
-        run: cd packages/next
-
       # Publish to npm
       - name: Publish to npm
+        working-directory: packages/next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
