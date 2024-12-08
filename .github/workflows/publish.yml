@@ -43,7 +43,7 @@ jobs:
       # Debug NPM Token
       - name: Debug NPM Token
         run: |
-          if [ -z "${{ secrets.NPM_TOKEN }}" ]; then
+          if [ -z "${{ env.NPM_TOKEN }}" ]; then
             echo "NPM_TOKEN is not set or empty."
             exit 1
           else
@@ -54,7 +54,7 @@ jobs:
       - name: Create .npmrc
         working-directory: packages/next
         run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ env.NPM_TOKEN }}" > .npmrc
 
       # Build Packages
       - name: Build pakcage
@@ -65,7 +65,7 @@ jobs:
       - name: Publish to npm
         working-directory: packages/next
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ env.NPM_TOKEN }}
         run: |
           echo "Publishing package version $TAG_VERSION to npm..."
           npm publish --access public --tag latest
