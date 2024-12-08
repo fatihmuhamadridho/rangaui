@@ -24,7 +24,7 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       # Validate tag and version
       - name: Validate tag matches package.json version
