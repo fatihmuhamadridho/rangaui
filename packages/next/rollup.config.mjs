@@ -7,7 +7,6 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import autoprefixer from 'autoprefixer';
 import tailwindcss from 'tailwindcss';
 import del from 'rollup-plugin-delete';
-import * as sass from 'sass';
 
 export default {
   input: 'src/index.ts',
@@ -44,9 +43,6 @@ export default {
       extensions: ['.css', '.scss'], // Proses file dengan ekstensi .css
       extract: 'styles.css', // Ubah nama file menjadi styles.css
       minimize: true, // Minifikasi CSS
-      use: {
-        sass: sass, // Use Dart Sass explicitly to avoid legacy API warnings
-      },
       plugins: [
         tailwindcss(), // Aktifkan Tailwind CSS
         autoprefixer(), // Tambahkan vendor prefix
