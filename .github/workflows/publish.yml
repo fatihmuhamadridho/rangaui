@@ -10,9 +10,6 @@ jobs:
     name: Publish to npm
     runs-on: ubuntu-latest
 
-    env:
-      NPM_TOKEN: ${{ vars.NPM_TOKEN }} # Mengambil dari GitHub Variables
-
     steps:
       # Checkout repository
       - name: Checkout code
@@ -43,22 +40,6 @@ jobs:
             exit 1
           fi
 
-      # Debug NPM Token
-      - name: Debug NPM Token
-        run: |
-          if [ -z "${NPM_TOKEN}" ]; then
-            echo "NPM_TOKEN is not set or empty."
-            exit 1
-          else
-            echo "NPM_TOKEN is set. Length: ${#NPM_TOKEN}"
-          fi
-
-      # Create .npmrc for authentication
-      - name: Create .npmrc
-        working-directory: packages/next
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
-
       # Build Packages
       - name: Build package
         working-directory: packages/next
@@ -67,6 +48,7 @@ jobs:
       # Publish to npm
       - name: Publish to npm
         working-directory: packages/next
-        run: |
-          echo "Publishing package version $TAG_VERSION to npm..."
-          npm publish --access public --tag latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: yarn semantic-release
