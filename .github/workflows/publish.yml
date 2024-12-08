@@ -40,6 +40,22 @@ jobs:
             exit 1
           fi
 
+      # Debug NPM Token
+      - name: Debug NPM Token
+        run: |
+          if [ -z "${{ secrets.NPM_TOKEN }}" ]; then
+            echo "NPM_TOKEN is not set or empty."
+            exit 1
+          else
+            echo "NPM_TOKEN is set. Length: ${#NPM_TOKEN}"
+          fi
+
+      # Create .npmrc for authentication
+      - name: Create .npmrc
+        working-directory: packages/next
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+
       # Build Packages
       - name: Build pakcage
         working-directory: packages/next
