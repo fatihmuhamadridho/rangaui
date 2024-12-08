@@ -1,5 +1,5 @@
 module.exports = {
-  tagFormat: ['*.*.*'],
+  tagFormat: '${version}',
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
