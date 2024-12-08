@@ -24,13 +24,13 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
       # Validate tag and version
       - name: Validate tag matches package.json version
         id: validate_version
         run: |
-          PACKAGE_VERSION=$(node -p "require('.packages/next/package.json').version")
+          PACKAGE_VERSION=$(node -p "require('./packages/next/package.json').version")
           TAG_VERSION=${GITHUB_REF#refs/tags/v}
           echo "Package.json version: $PACKAGE_VERSION"
           echo "Tag version: $TAG_VERSION"
