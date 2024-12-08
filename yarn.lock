@@ -6567,7 +6567,6 @@ __metadata:
     eslint-config-next: "npm:15.0.3"
     next: "npm:15.0.3"
     postcss: "npm:^8"
-    rangkaui-next: "workspace:*"
     react: "npm:^18.3.0"
     react-dom: "npm:^18.3.0"
     tailwindcss: "npm:^3.4.1"
@@ -6576,7 +6575,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"rangkaui-next@workspace:*, rangkaui-next@workspace:packages/next":
+"rangkaui-next@workspace:packages/next":
   version: 0.0.0-use.local
   resolution: "rangkaui-next@workspace:packages/next"
   dependencies:
