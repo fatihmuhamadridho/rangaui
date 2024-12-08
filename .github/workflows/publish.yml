@@ -39,6 +39,11 @@ jobs:
             exit 1
           fi
 
+      - name: Debug NPM Token
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: echo "${#NPM_TOKEN}"
+
       # Publish to npm
       - name: Publish to npm
         working-directory: packages/next
@@ -46,4 +51,4 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           echo "Publishing package version $TAG_VERSION to npm..."
-          npm publish
+          npm publish --access public --tag latest
