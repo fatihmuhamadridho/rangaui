@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20.12.2' # Sesuaikan dengan versi Node.js Anda
+          node-version: '20.12.2'
           cache: 'npm'
 
       # Install dependencies
@@ -29,8 +29,9 @@ jobs:
       # Validate tag and version
       - name: Validate tag matches package.json version
         id: validate_version
+        working-directory: packages/next
         run: |
-          PACKAGE_VERSION=$(node -p "require('./packages/next/package.json').version")
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
           TAG_VERSION=$(basename ${GITHUB_REF})
           echo "Package.json version: $PACKAGE_VERSION"
           echo "Tag version: $TAG_VERSION"
@@ -39,10 +40,21 @@ jobs:
             exit 1
           fi
 
+      # Debug NPM Token
       - name: Debug NPM Token
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: echo "${#NPM_TOKEN}"
+        run: |
+          if [ -z "${{ secrets.NPM_TOKEN }}" ]; then
+            echo "NPM_TOKEN is not set or empty."
+            exit 1
+          else
+            echo "NPM_TOKEN is set. Length: ${#NPM_TOKEN}"
+          fi
+
+      # Create .npmrc for authentication
+      - name: Create .npmrc
+        working-directory: packages/next
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
 
       # Publish to npm
       - name: Publish to npm
