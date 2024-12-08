@@ -3,7 +3,7 @@ name: Publish Package
 on:
   push:
     tags:
-      - '*.*.*'
+      - 'v*.*.*'
 
 jobs:
   publish:
@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16' # Sesuaikan dengan versi Node.js Anda
+          node-version: '20.12.2' # Sesuaikan dengan versi Node.js Anda
           cache: 'npm'
 
       # Install dependencies
@@ -38,6 +38,10 @@ jobs:
             echo "Error: Tag version ($TAG_VERSION) does not match package.json version ($PACKAGE_VERSION)"
             exit 1
           fi
+
+      # Change directory to the package
+      - name: Change to package directory
+        run: cd packages/next
 
       # Publish to npm
       - name: Publish to npm
