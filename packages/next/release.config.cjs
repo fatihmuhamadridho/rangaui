@@ -1,5 +1,5 @@
 module.exports = {
-  branches: [{ name: 'refs/tags/*' }],
+  tagFormat: ['*.*.*'],
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
