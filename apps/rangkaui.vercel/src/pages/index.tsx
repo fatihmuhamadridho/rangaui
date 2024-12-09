@@ -21,6 +21,7 @@ import {
   Slider,
   Carousel,
   Center,
+  Radio,
 } from 'rangkaui-next-dev';
 
 const HomePage = () => {
@@ -115,6 +116,9 @@ const HomePage = () => {
       <Carousel slides={slides}></Carousel>
       <Box w={'50%'} bg={'white'}>
         <Center>Ini Center</Center>
+        <Box>
+          <Radio label="test" name="test" value={'test'}></Radio>
+        </Box>
       </Box>
     </Stack>
   );
