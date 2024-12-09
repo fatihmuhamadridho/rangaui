@@ -21,5 +21,6 @@ export { default as Slider } from './components/Slider/Slider';
 export { default as Carousel } from './components/Carousel/Carousel';
 export { default as Center } from './components/Center/Center';
 export { default as Radio } from './components/Radio/Radio';
+export { default as Checkbox } from './components/Checkbox/Checkbox';
 
 export type { DataTableProps, HeadersDataTableProps } from './components/DataTable/DataTable';

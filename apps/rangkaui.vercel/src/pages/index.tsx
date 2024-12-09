@@ -22,6 +22,7 @@ import {
   Carousel,
   Center,
   Radio,
+  Checkbox,
 } from 'rangkaui-next-dev';
 
 const HomePage = () => {
@@ -117,7 +118,8 @@ const HomePage = () => {
       <Box w={'50%'} bg={'white'}>
         <Center>Ini Center</Center>
         <Box>
-          <Radio label="test" name="test" value={'test'}></Radio>
+          <Radio label="radio" name="radio" value={'radio'}></Radio>
+          <Checkbox label="checkbox" />
         </Box>
       </Box>
     </Stack>
