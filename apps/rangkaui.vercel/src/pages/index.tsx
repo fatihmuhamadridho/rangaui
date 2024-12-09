@@ -25,6 +25,7 @@ import {
   Checkbox,
   Chip,
   Grid,
+  Group,
 } from 'rangkaui-next-dev';
 
 const HomePage = () => {
@@ -123,13 +124,19 @@ const HomePage = () => {
           <Radio label="radio" name="radio" value={'radio'}></Radio>
           <Checkbox label="checkbox" />
           <Grid columns={3} gap="20px" p="16px" bg="#f9f9f9">
-            <Chip label="test"></Chip>
-            <Chip label="test"></Chip>
-            <Chip label="test"></Chip>
-            <Chip label="test"></Chip>
-            <Chip label="test"></Chip>
-            <Chip label="test"></Chip>
+            <Chip label="Grid and Chip"></Chip>
+            <Chip label="Grid and Chip"></Chip>
+            <Chip label="Grid and Chip"></Chip>
+            <Chip label="Grid and Chip"></Chip>
+            <Chip label="Grid and Chip"></Chip>
+            <Chip label="Grid and Chip"></Chip>
           </Grid>
+          <Group>
+            <Chip label="Group and Chip"></Chip>
+            <Chip label="Group and Chip"></Chip>
+            <Chip label="Group and Chip"></Chip>
+            <Chip label="Group and Chip"></Chip>
+          </Group>
         </Box>
       </Box>
     </Stack>
