@@ -57,4 +57,4 @@ jobs:
         working-directory: packages/next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --access public --tag latest --no-git-checks
+        run: npm publish --access public --tag latest
