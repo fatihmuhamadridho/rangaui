@@ -23,6 +23,7 @@ import {
   Center,
   Radio,
   Checkbox,
+  Chip,
 } from 'rangkaui-next-dev';
 
 const HomePage = () => {
@@ -120,6 +121,9 @@ const HomePage = () => {
         <Box>
           <Radio label="radio" name="radio" value={'radio'}></Radio>
           <Checkbox label="checkbox" />
+          <Chip label="test"></Chip>
+          <Chip label="test"></Chip>
+          <Chip label="test"></Chip>
         </Box>
       </Box>
     </Stack>
