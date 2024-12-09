@@ -20,6 +20,7 @@ import {
   Tooltip,
   Slider,
   Carousel,
+  Center,
 } from 'rangkaui-next-dev';
 
 const HomePage = () => {
@@ -112,7 +113,9 @@ const HomePage = () => {
       <DataTable headers={headers} data={data} />
       <Slider steps={[20, 50, 100]} />
       <Carousel slides={slides}></Carousel>
-      <Box></Box>
+      <Box w={'50%'} bg={'white'}>
+        <Center>Ini Center</Center>
+      </Box>
     </Stack>
   );
 };
