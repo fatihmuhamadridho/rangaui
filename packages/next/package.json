@@ -1,6 +1,6 @@
 {
   "name": "rangkaui-next",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "description": "React components library focused on usability, accessibility and developer experience",
   "homepage": "https://rangkaui.vercel.app/",
   "license": "MIT",
@@ -38,9 +38,6 @@
     "url": "git+https://github.com/fatihmuhamadridho/rangkaui.git",
     "type": "git",
     "directory": "packages/next"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "peerDependencies": {
     "next": "^13.x",
