@@ -45,6 +45,13 @@ jobs:
         working-directory: packages/next
         run: yarn build
 
+      # Whoami to verify authentication
+      - name: Whoami
+        working-directory: packages/next
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm whoami
+
       # Publish to npm
       - name: Publish to npm
         working-directory: packages/next
