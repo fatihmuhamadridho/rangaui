@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
+import classes from './Center.module.css';
 
-const Center = () => {
-  return <div>Center</div>;
+interface CenterProps {
+  children?: React.ReactNode;
+  style?: CSSProperties;
+  className?: string;
+}
+
+const Center: React.FC<CenterProps> = ({ children, style, className = '' }) => {
+  return (
+    <div className={`${classes.center} ${className}`} style={style}>
+      {children}
+    </div>
+  );
 };
 
 export default Center;

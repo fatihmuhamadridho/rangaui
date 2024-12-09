@@ -1,39 +1,59 @@
-import React, { useState } from 'react';
+import React, { CSSProperties, useMemo, useState } from 'react';
 import classes from './Slider.module.css';
+import { BasicProps } from '../../types/global';
+import { resolveStyleProp } from '../../helpers';
 
-interface SliderProps {
-  slides: string[];
+interface SliderProps extends BasicProps {
+  steps: number[];
+  className?: string;
+  style?: CSSProperties;
+  value?: number;
+  onChange?: (value: number) => void;
 }
 
-const Slider: React.FC<SliderProps> = ({ slides }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const Slider = (props: SliderProps) => {
+  const { steps, className = '', style, value = 0, onChange, m, p, px, py, c, bg, w, h } = props;
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1));
-  };
+  const [currentValue, setCurrentValue] = useState(value);
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1));
+  const sliderStyle = useMemo(() => {
+    return {
+      margin: resolveStyleProp(m),
+      padding: resolveStyleProp(p),
+      paddingLeft: resolveStyleProp(px),
+      paddingRight: resolveStyleProp(px),
+      paddingTop: resolveStyleProp(py),
+      paddingBottom: resolveStyleProp(py),
+      color: resolveStyleProp(c),
+      backgroundColor: resolveStyleProp(bg),
+      width: resolveStyleProp(w),
+      height: resolveStyleProp(h),
+      ...style,
+    };
+  }, [style, m, p, px, py, c, bg, w, h]);
+
+  const handleStepClick = (step: number) => {
+    setCurrentValue(step);
+    onChange?.(step);
   };
 
   return (
-    <div className={classes.slider}>
-      <button className={classes.prev} onClick={prevSlide}>
-        ❮
-      </button>
-      <div
-        className={classes.sliderContent}
-        style={{
-          transform: `translateX(-${currentIndex * 100}%)`,
-        }}
-      >
-        {slides.map((slide, index) => (
-          <img key={index} src={slide} alt={`Slide ${index + 1}`} className={classes.slide} />
+    <div className={`${classes['rangkaui-slider']} ${className}`} style={sliderStyle}>
+      <div className={classes.track}>
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className={`${classes.step} ${currentValue >= step ? classes.active : ''}`}
+            onClick={() => handleStepClick(step)}
+          >
+            {step}%
+          </div>
         ))}
+        <div
+          className={classes.indicator}
+          style={{ left: `${(currentValue / steps[steps.length - 1]) * 100}%` }}
+        />
       </div>
-      <button className={classes.next} onClick={nextSlide}>
-        ❯
-      </button>
     </div>
   );
 };

@@ -19,6 +19,8 @@ import {
   Modal,
   Tooltip,
   Slider,
+  Carousel,
+  Center,
 } from 'rangkaui-next-dev';
 
 const HomePage = () => {
@@ -47,6 +49,7 @@ const HomePage = () => {
     { key: 'username', label: 'username' },
     { key: 'username', label: 'username' },
   ];
+
   const slides = [
     'https://via.placeholder.com/600x300?text=Slide+1',
     'https://via.placeholder.com/600x300?text=Slide+2',
@@ -108,7 +111,11 @@ const HomePage = () => {
         )}
       </Formulir>
       <DataTable headers={headers} data={data} />
-      <Slider slides={slides} />
+      <Slider steps={[20, 50, 100]} />
+      <Carousel slides={slides}></Carousel>
+      <Box w={'50%'} bg={'white'}>
+        <Center>Ini Center</Center>
+      </Box>
     </Stack>
   );
 };
