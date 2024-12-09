@@ -1,6 +1,6 @@
 {
   "name": "rangkaui-next",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "React components library focused on usability, accessibility and developer experience",
   "homepage": "https://rangkaui.vercel.app/",
   "license": "MIT",
@@ -23,8 +23,7 @@
     "build:cjs": "tsc --project tsconfig.build.json --module CommonJS --outDir cjs",
     "postbuild": "node scripts/postbuild.js",
     "build": "rollup -c",
-    "publish:latest": "npm publish --access public --tag latest",
-    "semantic-release": "semantic-release"
+    "publish:latest": "npm publish --access public --tag latest"
   },
   "files": [
     "dist",
@@ -64,7 +63,6 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.36.0",
-    "semantic-release": "^24.2.0",
     "tailwindcss": "^3.4.15",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.2",

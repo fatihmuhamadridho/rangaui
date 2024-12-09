@@ -49,6 +49,5 @@ jobs:
       - name: Publish to npm
         working-directory: packages/next
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn semantic-release
+        run: npm publish --access public --tag latest --no-git-checks
