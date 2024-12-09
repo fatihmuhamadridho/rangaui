@@ -26,6 +26,7 @@ import {
   Chip,
   Grid,
   Group,
+  Rating,
 } from 'rangkaui-next-dev';
 
 const HomePage = () => {
@@ -137,6 +138,7 @@ const HomePage = () => {
             <Chip label="Group and Chip"></Chip>
             <Chip label="Group and Chip"></Chip>
           </Group>
+          <Rating value={5} readOnly />
         </Box>
       </Box>
     </Stack>

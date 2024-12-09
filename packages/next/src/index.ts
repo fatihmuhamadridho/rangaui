@@ -25,5 +25,6 @@ export { default as Checkbox } from './components/Checkbox/Checkbox';
 export { default as Chip } from './components/Chip/Chip';
 export { default as Grid } from './components/Grid/Grid';
 export { default as Group } from './components/Group/Group';
+export { default as Rating } from './components/Rating/Rating';
 
 export type { DataTableProps, HeadersDataTableProps } from './components/DataTable/DataTable';
