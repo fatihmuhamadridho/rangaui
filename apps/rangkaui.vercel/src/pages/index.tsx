@@ -18,6 +18,7 @@ import {
   TextArea,
   Modal,
   Tooltip,
+  Slider,
 } from 'rangkaui-next-dev';
 
 const HomePage = () => {
@@ -45,6 +46,11 @@ const HomePage = () => {
     { key: 'username', label: 'username' },
     { key: 'username', label: 'username' },
     { key: 'username', label: 'username' },
+  ];
+  const slides = [
+    'https://via.placeholder.com/600x300?text=Slide+1',
+    'https://via.placeholder.com/600x300?text=Slide+2',
+    'https://via.placeholder.com/600x300?text=Slide+3',
   ];
 
   const handleSubmitData = () => {
@@ -102,6 +108,7 @@ const HomePage = () => {
         )}
       </Formulir>
       <DataTable headers={headers} data={data} />
+      <Slider slides={slides} />
     </Stack>
   );
 };
