@@ -19,5 +19,6 @@ export { default as Modal } from './components/Modal/Modal';
 export { default as Tooltip } from './components/Tooltip/Tooltip';
 export { default as Slider } from './components/Slider/Slider';
 export { default as Carousel } from './components/Carousel/Carousel';
+export { default as Center } from './components/Center/Center';
 
 export type { DataTableProps, HeadersDataTableProps } from './components/DataTable/DataTable';

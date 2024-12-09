@@ -112,6 +112,7 @@ const HomePage = () => {
       <DataTable headers={headers} data={data} />
       <Slider steps={[20, 50, 100]} />
       <Carousel slides={slides}></Carousel>
+      <Box></Box>
     </Stack>
   );
 };
