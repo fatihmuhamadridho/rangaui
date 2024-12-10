@@ -29,6 +29,7 @@ import {
   Rating,
   Menu,
   PasswordInput,
+  DateInput,
 } from 'rangkaui-next-dev';
 
 const HomePage = () => {
@@ -151,6 +152,7 @@ const HomePage = () => {
       </Box>
       <Menu items={menuItems} />
       <PasswordInput value="test" />
+      <DateInput />
     </Stack>
   );
 };
