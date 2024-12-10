@@ -27,6 +27,7 @@ import {
   Grid,
   Group,
   Rating,
+  Menu,
 } from 'rangkaui-next-dev';
 
 const HomePage = () => {
@@ -60,6 +61,12 @@ const HomePage = () => {
     'https://via.placeholder.com/600x300?text=Slide+1',
     'https://via.placeholder.com/600x300?text=Slide+2',
     'https://via.placeholder.com/600x300?text=Slide+3',
+  ];
+
+  const menuItems = [
+    { label: 'Profile', onClick: () => alert('Profile clicked') },
+    { label: 'Settings', onClick: () => alert('Settings clicked') },
+    { label: 'Logout', onClick: () => alert('Logout clicked') },
   ];
 
   const handleSubmitData = () => {
@@ -141,6 +148,7 @@ const HomePage = () => {
           <Rating value={5} readOnly />
         </Box>
       </Box>
+      <Menu items={menuItems} />
     </Stack>
   );
 };

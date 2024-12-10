@@ -26,5 +26,6 @@ export { default as Chip } from './components/Chip/Chip';
 export { default as Grid } from './components/Grid/Grid';
 export { default as Group } from './components/Group/Group';
 export { default as Rating } from './components/Rating/Rating';
+export { default as Menu } from './components/Menu/Menu';
 
 export type { DataTableProps, HeadersDataTableProps } from './components/DataTable/DataTable';
