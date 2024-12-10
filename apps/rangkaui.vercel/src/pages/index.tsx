@@ -22,6 +22,13 @@ import {
   Carousel,
   Center,
   Radio,
+  Checkbox,
+  Chip,
+  Grid,
+  Group,
+  Rating,
+  Menu,
+  PasswordInput,
 } from 'rangkaui-next-dev';
 
 const HomePage = () => {
@@ -55,6 +62,12 @@ const HomePage = () => {
     'https://via.placeholder.com/600x300?text=Slide+1',
     'https://via.placeholder.com/600x300?text=Slide+2',
     'https://via.placeholder.com/600x300?text=Slide+3',
+  ];
+
+  const menuItems = [
+    { label: 'Profile', onClick: () => alert('Profile clicked') },
+    { label: 'Settings', onClick: () => alert('Settings clicked') },
+    { label: 'Logout', onClick: () => alert('Logout clicked') },
   ];
 
   const handleSubmitData = () => {
@@ -117,9 +130,27 @@ const HomePage = () => {
       <Box w={'50%'} bg={'white'}>
         <Center>Ini Center</Center>
         <Box>
-          <Radio label="test" name="test" value={'test'}></Radio>
+          <Radio label="radio" name="radio" value={'radio'}></Radio>
+          <Checkbox label="checkbox" />
+          <Grid columns={3} gap="20px" p="16px" bg="#f9f9f9">
+            <Chip label="Grid and Chip"></Chip>
+            <Chip label="Grid and Chip"></Chip>
+            <Chip label="Grid and Chip"></Chip>
+            <Chip label="Grid and Chip"></Chip>
+            <Chip label="Grid and Chip"></Chip>
+            <Chip label="Grid and Chip"></Chip>
+          </Grid>
+          <Group>
+            <Chip label="Group and Chip"></Chip>
+            <Chip label="Group and Chip"></Chip>
+            <Chip label="Group and Chip"></Chip>
+            <Chip label="Group and Chip"></Chip>
+          </Group>
+          <Rating value={5} readOnly />
         </Box>
       </Box>
+      <Menu items={menuItems} />
+      <PasswordInput value="test" />
     </Stack>
   );
 };

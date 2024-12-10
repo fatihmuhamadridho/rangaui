@@ -21,5 +21,12 @@ export { default as Slider } from './components/Slider/Slider';
 export { default as Carousel } from './components/Carousel/Carousel';
 export { default as Center } from './components/Center/Center';
 export { default as Radio } from './components/Radio/Radio';
+export { default as Checkbox } from './components/Checkbox/Checkbox';
+export { default as Chip } from './components/Chip/Chip';
+export { default as Grid } from './components/Grid/Grid';
+export { default as Group } from './components/Group/Group';
+export { default as Rating } from './components/Rating/Rating';
+export { default as Menu } from './components/Menu/Menu';
+export { default as PasswordInput } from './components/PasswordInput/PasswordInput';
 
 export type { DataTableProps, HeadersDataTableProps } from './components/DataTable/DataTable';
