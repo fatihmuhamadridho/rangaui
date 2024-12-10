@@ -27,5 +27,6 @@ export { default as Grid } from './components/Grid/Grid';
 export { default as Group } from './components/Group/Group';
 export { default as Rating } from './components/Rating/Rating';
 export { default as Menu } from './components/Menu/Menu';
+export { default as PasswordInput } from './components/PasswordInput/PasswordInput';
 
 export type { DataTableProps, HeadersDataTableProps } from './components/DataTable/DataTable';
