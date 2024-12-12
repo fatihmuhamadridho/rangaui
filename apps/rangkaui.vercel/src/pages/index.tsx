@@ -1,160 +1,34 @@
-import React, { useState } from 'react';
-import {
-  Accordion,
-  Box,
-  Button,
-  Flex,
-  Select,
-  Stack,
-  Text,
-  TextInput,
-  Switch,
-  Formulir,
-  Form,
-  DataTable,
-  HeadersDataTableProps,
-  Divider,
-  Space,
-  TextArea,
-  Modal,
-  Tooltip,
-  Slider,
-  Carousel,
-  Center,
-  Radio,
-  Checkbox,
-  Chip,
-  Grid,
-  Group,
-  Rating,
-  Menu,
-  PasswordInput,
-  DateInput,
-} from 'rangkaui-next-dev';
+import Layout from '@/components/Layout/Layout';
+import Link from 'next/link';
+import { Box, Button } from 'rangkaui-next-dev';
+import React from 'react';
 
-const HomePage = () => {
-  const [data, setData] = useState<any[]>([
-    { username: 'fatih' },
-    { username: 'fatih' },
-    { username: 'fatih' },
-    { username: 'fatih' },
-  ]);
-  const [open, setOpen] = useState<boolean>(false);
-
-  const headers: HeadersDataTableProps[] = [
-    { key: 'index', label: 'no' },
-    { key: 'username', label: 'username' },
-    { key: 'username', label: 'username' },
-    { key: 'username', label: 'username' },
-    { key: 'username', label: 'username' },
-    { key: 'username', label: 'username' },
-    { key: 'username', label: 'username' },
-    { key: 'username', label: 'username' },
-    { key: 'username', label: 'username' },
-    { key: 'username', label: 'username' },
-    { key: 'username', label: 'username' },
-    { key: 'username', label: 'username' },
-    { key: 'username', label: 'username' },
-    { key: 'username', label: 'username' },
-    { key: 'username', label: 'username' },
-  ];
-
-  const slides = [
-    'https://via.placeholder.com/600x300?text=Slide+1',
-    'https://via.placeholder.com/600x300?text=Slide+2',
-    'https://via.placeholder.com/600x300?text=Slide+3',
-  ];
-
-  const menuItems = [
-    { label: 'Profile', onClick: () => alert('Profile clicked') },
-    { label: 'Settings', onClick: () => alert('Settings clicked') },
-    { label: 'Logout', onClick: () => alert('Logout clicked') },
-  ];
-
-  const handleSubmitData = () => {
-    setData(data?.concat([{ username: 'fatih' }]));
-  };
-
+const HoemPage = () => {
   return (
-    <Stack>
-      <Box c={'white'}>Box</Box>
-      <Flex direction="column">
-        <Box c={'white'}>Flex</Box>
-        <Box c={'white'}>Flex</Box>
-      </Flex>
-      <Accordion>
-        <Accordion.Item value="test1">
-          <Accordion.Control>awdada</Accordion.Control>
-          <Accordion.Panel>awdaa</Accordion.Panel>
-        </Accordion.Item>
-        <Accordion.Item value="test2">
-          <Accordion.Control>awdada</Accordion.Control>
-          <Accordion.Panel>awdaa</Accordion.Panel>
-        </Accordion.Item>
-      </Accordion>
+    <Layout>
       <Box>
-        <Tooltip content="Tooltip">
-          <Text c={'white'}>Text dan Tooltip</Text>
-        </Tooltip>
+        <section className="py-[180px] px-[170px] min-h-[643px] bg-[#1f1f1f]">
+          <Link href={'/getting-started'}>
+            <Button>Getting Started</Button>
+          </Link>
+        </section>
+        <section className="min-h-[643px] bg-[#242424]">
+          <div className="py-[100px] px-[170px] text-white">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis mollitia
+            consectetur distinctio voluptatibus possimus repudiandae eos dolor sint ex iste labore
+            nesciunt, reiciendis aut non unde quasi eveniet veniam ipsa laudantium quo similique
+            odit. Inventore eius blanditiis molestiae nihil minus animi repellendus delectus
+            incidunt, architecto maiores, consequuntur ratione, illum alias dolorem ut vel saepe
+            earum eos quo dolor? Maxime cumque architecto unde! Temporibus placeat officiis facilis,
+            doloremque nobis ullam unde eos blanditiis tempore eius voluptas animi ipsam,
+            voluptatum, vero quis minima aliquid iusto eum. Perspiciatis alias, accusamus, maiores
+            inventore officiis nisi veritatis, commodi et iusto officia unde recusandae voluptatibus
+            quae?
+          </div>
+        </section>
       </Box>
-      <Formulir initialValues={{ input: '', select: '', textarea: '' }} onSubmit={handleSubmitData}>
-        {({ handleSubmit, handleChange, values }) => (
-          <Form onSubmit={handleSubmit}>
-            <Stack>
-              <Select
-                data={[{ label: 'test', value: 'test' }]}
-                name="select"
-                onChange={handleChange}
-                value={values.select}
-              />
-              <TextInput label="input" name="input" onChange={handleChange} value={values.input} />
-              <Switch label="switch" checked={true} />
-              <Space />
-              <TextArea label="textarea" onChange={handleChange} value={values.textarea} />
-              <Divider color="white" />
-              <Flex gap={12}>
-                <Button>Button</Button>
-                <Modal isOpen={open} onClose={() => setOpen(false)} closeOnClickOutside={true}>
-                  <Box>Modal</Box>
-                </Modal>
-                <Tooltip content="awdadada">
-                  <Button onClick={() => setOpen(true)}>Modal</Button>
-                </Tooltip>
-              </Flex>
-            </Stack>
-          </Form>
-        )}
-      </Formulir>
-      <DataTable headers={headers} data={data} />
-      <Slider steps={[20, 50, 100]} />
-      <Carousel slides={slides}></Carousel>
-      <Box w={'50%'} bg={'white'}>
-        <Center>Ini Center</Center>
-        <Box>
-          <Radio label="radio" name="radio" value={'radio'}></Radio>
-          <Checkbox label="checkbox" />
-          <Grid columns={3} gap="20px" p="16px" bg="#f9f9f9">
-            <Chip label="Grid and Chip"></Chip>
-            <Chip label="Grid and Chip"></Chip>
-            <Chip label="Grid and Chip"></Chip>
-            <Chip label="Grid and Chip"></Chip>
-            <Chip label="Grid and Chip"></Chip>
-            <Chip label="Grid and Chip"></Chip>
-          </Grid>
-          <Group>
-            <Chip label="Group and Chip"></Chip>
-            <Chip label="Group and Chip"></Chip>
-            <Chip label="Group and Chip"></Chip>
-            <Chip label="Group and Chip"></Chip>
-          </Group>
-          <Rating value={5} readOnly />
-        </Box>
-      </Box>
-      <Menu items={menuItems} />
-      <PasswordInput value="test" />
-      <DateInput />
-    </Stack>
+    </Layout>
   );
 };
 
-export default HomePage;
+export default HoemPage;

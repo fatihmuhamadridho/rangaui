@@ -1,6 +1,6 @@
 import React, { CSSProperties, MouseEventHandler, useMemo } from 'react';
 import classes from './Button.module.css';
-import { BasicProps } from '../../types/global';
+import { BasicProps, StyleProp } from '../../types/global';
 import { resolveStyleProp } from '../../helpers';
 
 interface ButtonProps extends BasicProps {
@@ -10,6 +10,8 @@ interface ButtonProps extends BasicProps {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   type?: 'submit' | 'reset' | 'button';
   fullWidth?: boolean;
+  fw?: StyleProp<string | number>; // Font weight
+  fz?: StyleProp<string | number>; // Font size
 }
 
 const Button = (props: ButtonProps) => {
@@ -27,6 +29,8 @@ const Button = (props: ButtonProps) => {
     bg,
     w,
     h,
+    fw,
+    fz,
     fullWidth = false,
   } = props;
 
@@ -42,10 +46,12 @@ const Button = (props: ButtonProps) => {
       backgroundColor: resolveStyleProp(bg),
       width: resolveStyleProp(w),
       height: resolveStyleProp(h),
+      fontWeight: resolveStyleProp(fw),
+      fontSize: resolveStyleProp(fz),
       ...(fullWidth && { maxWidth: '100%' }),
       ...style,
     };
-  }, [style, fullWidth, m, p, px, py, c, bg, w, h]);
+  }, [style, fullWidth, m, p, px, py, c, bg, w, h, fw, fz]);
 
   return (
     <button

@@ -27,6 +27,6 @@ export type BasicProps = {
   miw?: StyleProp<number | string>;
   mih?: StyleProp<number | string>;
   flex?: StyleProp<CSSProperties['flex']>;
-  align?: StyleProp<CSSProperties['alignItems']>;
+  items?: StyleProp<CSSProperties['alignItems']>;
   justify?: StyleProp<CSSProperties['justifyContent']>;
 };
