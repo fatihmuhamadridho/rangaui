@@ -1,8 +1,9 @@
 import React from 'react';
-import { Flex, Text, TextInput } from 'rangkaui-next-dev';
+import { Button, Flex, Text, TextInput } from 'rangkaui-next-dev';
 import { useTheme } from '@/contexts/theme';
 import Image from 'next/image';
 import Link from 'next/link';
+import { IconBrandGithub } from '@tabler/icons-react';
 
 const Header = () => {
   const { backgroundColor, color } = useTheme();
@@ -27,8 +28,13 @@ const Header = () => {
           </Text>
         </Flex>
       </Link>
-      <Flex items="center">
+      <Flex items="center" gap={10}>
         <TextInput />
+        <Link href={'https://github.com/fatihmuhamadridho/rangkaui'} target="__blank">
+          <Button>
+            <IconBrandGithub color="black" />
+          </Button>
+        </Link>
       </Flex>
     </Flex>
   );
