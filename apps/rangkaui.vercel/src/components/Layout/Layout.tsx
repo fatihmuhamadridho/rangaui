@@ -1,43 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import { MDXProvider } from '@mdx-js/react';
-import { Box } from 'rangkaui-next-dev';
-import Header from '../Header/Header';
-import Navbar from '../Navbar/Navbar';
 import { useTheme } from '@/contexts/theme';
+import { Box } from 'rangkaui-next-dev';
+import React from 'react';
+import Header from '../Header/Header';
 
-interface MdxProviderProps {
+interface LayoutProps {
   children: React.ReactNode;
 }
 
-const MdxProvider = ({ children }: MdxProviderProps) => {
+const Layout = (props: LayoutProps) => {
   const { backgroundColor } = useTheme();
-  const [isClient, setIsClient] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (!isClient) setIsClient(true);
-  }, [isClient]);
-
-  if (!isClient) return null;
-
+  const { children } = props;
   return (
     <Box className="min-h-screen h-full flex flex-col">
       <Header />
-      <Navbar />
-      <Box
-        className="pt-[calc(56px+32px)] pl-[calc(256px+64px)] pb-8 px-[64px] flex-grow h-full overflow-y-auto"
-        style={{ backgroundColor }}
-      >
-        <MDXProvider
-          components={{
-            h2: ({ children }) =>
-              isClient ? <h2 style={{ color: 'red' }}>{children}</h2> : <h2>{children}</h2>,
-          }}
-        >
-          {children}
-        </MDXProvider>
+      <Box className="pt-[56px] flex-grow h-full overflow-y-auto" style={{ backgroundColor }}>
+        {children}
       </Box>
     </Box>
   );
 };
 
-export default MdxProvider;
+export default Layout;
