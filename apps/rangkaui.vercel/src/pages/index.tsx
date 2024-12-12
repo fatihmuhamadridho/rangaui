@@ -30,6 +30,7 @@ import {
   Menu,
   PasswordInput,
   DateInput,
+  PinInput,
 } from 'rangkaui-next-dev';
 
 const HomePage = () => {
@@ -153,6 +154,7 @@ const HomePage = () => {
       <Menu items={menuItems} />
       <PasswordInput value="test" />
       <DateInput />
+      <PinInput />
     </Stack>
   );
 };

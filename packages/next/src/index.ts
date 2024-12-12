@@ -29,5 +29,6 @@ export { default as Rating } from './components/Rating/Rating';
 export { default as Menu } from './components/Menu/Menu';
 export { default as PasswordInput } from './components/PasswordInput/PasswordInput';
 export { default as DateInput } from './components/DateInput/DateInput';
+export { default as PinInput } from './components/PinInput/PinInput';
 
 export type { DataTableProps, HeadersDataTableProps } from './components/DataTable/DataTable';
