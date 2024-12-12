@@ -24,7 +24,7 @@ const MdxProvider = ({ children }: MdxProviderProps) => {
       <Header />
       <Navbar />
       <Box
-        className="pt-[calc(56px+8px)] pl-[calc(256px+8px)] p-2 flex-grow h-full overflow-y-auto"
+        className="pt-[calc(56px+32px)] pl-[calc(256px+64px)] pb-8 px-[64px] flex-grow h-full overflow-y-auto"
         style={{ backgroundColor }}
       >
         <MDXProvider
