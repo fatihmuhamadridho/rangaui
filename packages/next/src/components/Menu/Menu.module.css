@@ -3,38 +3,69 @@
   display: inline-block;
 }
 
-.menuButton {
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
+.menuTargetContainer {
   cursor: pointer;
 }
 
-.menuButton:hover {
-  background-color: #0056b3;
+.menuDropdownContainer {
+  position: absolute;
+  top: 150%;
+  left: 0;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1000;
 }
 
-.menuList {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+.menuTarget {
+  display: inline-block;
+}
+
+.menuDropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.menuLabel {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 12px;
+  color: #555;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #eee;
 }
 
 .menuItem {
-  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .menuItem:hover {
-  background-color: #f1f1f1;
+  background-color: #f0f0f0;
+}
+
+.menuLeftSection {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.menuContent {
+  flex-grow: 1;
+  color: black;
+}
+
+.menuRightSection {
+  margin-left: 8px;
+  font-size: 12px;
+  color: gray;
+}
+
+.menuDivider {
+  height: 1px;
+  background-color: #eee;
+  margin: 8px 0;
 }

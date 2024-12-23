@@ -1,48 +1,94 @@
-import React, { useState } from 'react';
+import React, { useState, ReactElement } from 'react';
 import classes from './Menu.module.css';
 
-interface MenuItem {
-  label: string;
-  onClick: () => void;
-}
+const MenuTarget = ({ children }: { children: React.ReactNode }) => {
+  return <div className={classes.menuTarget}>{children}</div>;
+};
+
+const MenuDropdown = ({ children }: { children: React.ReactNode }) => {
+  return <div className={classes.menuDropdown}>{children}</div>;
+};
+
+const MenuLabel = ({ children }: { children: React.ReactNode }) => {
+  return <div className={classes.menuLabel}>{children}</div>;
+};
+
+const MenuItem = ({
+  children,
+  leftSection,
+  rightSection,
+  color,
+}: {
+  children: React.ReactNode;
+  leftSection?: React.ReactNode;
+  rightSection?: React.ReactNode;
+  color?: string;
+}) => {
+  const itemStyle = {
+    color: color || 'inherit',
+  };
+
+  return (
+    <div className={classes.menuItem} style={itemStyle}>
+      {leftSection && <span className={classes.menuLeftSection}>{leftSection}</span>}
+      <span className={classes.menuContent}>{children}</span>
+      {rightSection && <span className={classes.menuRightSection}>{rightSection}</span>}
+    </div>
+  );
+};
+
+const MenuDivider = () => {
+  return <div className={classes.menuDivider} />;
+};
 
 interface MenuProps {
-  items: MenuItem[];
   className?: string;
+  children?: React.ReactNode;
+  shadow?: string;
+  width?: number;
 }
 
-const Menu = ({ items, className = '' }: MenuProps) => {
+const Menu = ({ className = '', children, shadow = 'md', width = 200 }: MenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
 
-  const handleItemClick = (onClick: () => void) => {
-    onClick();
-    setIsOpen(false);
+  const dropdownStyle = {
+    boxShadow: shadow === 'md' ? '0 4px 6px rgba(0, 0, 0, 0.1)' : '',
+    width: `${width}px`,
   };
 
   return (
     <div className={`${classes.menuContainer} ${className}`}>
-      <button className={classes.menuButton} onClick={toggleMenu}>
-        Menu
-      </button>
+      <div onClick={toggleMenu} className={classes.menuTargetContainer}>
+        {React.Children.map(children, (child) => {
+          if (React.isValidElement(child) && child.type === MenuTarget) {
+            return React.cloneElement(child as ReactElement<any>);
+          }
+          return null;
+        })}
+      </div>
+
       {isOpen && (
-        <ul className={classes.menuList}>
-          {items.map((item, index) => (
-            <li
-              key={index}
-              className={classes.menuItem}
-              onClick={() => handleItemClick(item.onClick)}
-            >
-              {item.label}
-            </li>
-          ))}
-        </ul>
+        <div className={classes.menuDropdownContainer} style={dropdownStyle}>
+          {React.Children.map(children, (child) => {
+            if (React.isValidElement(child) && child.type === MenuDropdown) {
+              return React.cloneElement(child as ReactElement<any>);
+            }
+            return null;
+          })}
+        </div>
       )}
     </div>
   );
 };
+
+Menu.Target = MenuTarget;
+Menu.Dropdown = MenuDropdown;
+Menu.Label = MenuLabel;
+Menu.Item = MenuItem;
+Menu.Divider = MenuDivider;
 
 export default Menu;

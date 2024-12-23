@@ -1,11 +1,16 @@
 import { Button } from 'rangkaui-next';
 import { lorem1000 } from '../constant/lorem';
+import MdxProvider from '../components/MdxProvider/MdxProvider';
 
-## Halo, Ini Halaman MDX dengan TypeScript!
+<MdxProvider>
 
-Ini adalah halaman dengan **Markdown** dan elemen **React**.
-{lorem1000}
+<div className="text-white">
+  Ini adalah halaman dengan **Markdown** dan elemen **React**.
+</div>
+
+<div className="text-white">{lorem1000}</div>
 
 <br />
 <br />
 <Button type="button">Contoh Tombol</Button>
+</MdxProvider>
